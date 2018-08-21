@@ -1,5 +1,6 @@
 package xyz.oilpea.wechat.app.api.web.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Controller
@@ -17,7 +19,7 @@ public class LoinApiController {
 	HttpServletRequest request = requestAttributes.getRequest();
 	HttpServletResponse response = requestAttributes.getResponse();
 
-	public void login() {
+	public void login() throws IOException {
 		String signature = request.getParameter("signature");
 		String timestamp = request.getParameter("timestamp");
 		String nonce = request.getParameter("nonce");
