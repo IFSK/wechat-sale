@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: mybatis-generator
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: a1875
+Implementation-Vendor-Id: xyz.oilpea
+Build-Jdk: 1.8.0_131
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/wechat-sale/mybatis-generator
+Created-By: Maven Integration for Eclipse
+
