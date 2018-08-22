@@ -20,7 +20,7 @@ public class GeneratorMybatisMapper {
 	 * 默认配置文件为./src/main/resources/config/generator.xml
 	 */
 	public static void createMybatisGeneratorProject() {
-		createMybatisGeneratorProject("./src/main/resources/config/generator.xml");
+		createMybatisGeneratorProject("./src/main/resources/generator.xml");
 	}
 
 	/**

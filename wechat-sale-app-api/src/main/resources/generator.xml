@@ -6,7 +6,7 @@
 	<!--mybatis逆向工程，本质上是根据 数据库表生成 pojo类，mapper接口以及mapper.xml 文件 -->
 
 	<!--读取配置文件 -->
-	<properties resource="config/jdbc.properties" />
+	<!-- <properties resource="jdbc.properties" /> -->
 
 	<context id="Mysql" targetRuntime="MyBatis3Simple"
 		defaultModelType="flat">
@@ -27,9 +27,9 @@
 		</commentGenerator>
 
 		<!--配置链接参数 -->
-		<jdbcConnection driverClass="${jdbc.driverClass}"
-			connectionURL="${jdbc.jdbcUrl}" userId="${jdbc.user}"
-			password="${jdbc.password}">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://47.106.215.255:3306/wechat_sale" userId="wechat_sale"
+			password="aabbcc998877">
 		</jdbcConnection>
 
 		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和
@@ -64,7 +64,7 @@
 		</javaClientGenerator>
 
 		<!--通配符匹配模块前缀，生成实体类以及映射接口 -->
-		<table tableName="qrtz_cron_triggers">
+		<table tableName="app_api">
 			<generatedKey column="id" sqlStatement="Mysql"
 				identity="true" />
 		</table>
