@@ -1,1 +1,5 @@
-xyz\oilpea\wechat\app\api\web\controller\LoinApiController.class
+xyz\oilpea\wechat\app\api\util\HttpsUtil.class
+xyz\oilpea\wechat\app\api\web\controller\RedirectController.class
+xyz\oilpea\wechat\app\api\ApiApplication.class
+xyz\oilpea\wechat\app\api\util\JEEWeiXinX509TrustManager.class
+xyz\oilpea\wechat\app\api\util\UserInfoUtil.class
