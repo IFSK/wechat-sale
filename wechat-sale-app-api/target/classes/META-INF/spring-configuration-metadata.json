@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "xyz.oilpea.wechat.app.api.config.WechatAccountConfig",
+      "name": "wechat",
+      "type": "xyz.oilpea.wechat.app.api.config.WechatAccountConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "xyz.oilpea.wechat.app.api.config.WechatAccountConfig",
+      "name": "wechat.mp-app-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "xyz.oilpea.wechat.app.api.config.WechatAccountConfig",
+      "name": "wechat.mp-app-secret",
+      "type": "java.lang.String"
+    }
+  ]
+}

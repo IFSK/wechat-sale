@@ -54,5 +54,6 @@
 		<module>wechat-sale-headquarters</module>
 		<module>wechat-sale-score</module>
 		<module>mybatis-generator</module>
+		<module>wechat-sale-user</module>
 	</modules>
 </project>
