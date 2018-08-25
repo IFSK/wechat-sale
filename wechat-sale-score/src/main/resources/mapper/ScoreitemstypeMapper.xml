@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.ScoreitemstypeMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.Scoreitemstype">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="item_id" jdbcType="INTEGER" property="itemId" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="item_img" jdbcType="VARCHAR" property="itemImg" />
+    <result column="item_head_img" jdbcType="VARCHAR" property="itemHeadImg" />
+    <result column="item_category" jdbcType="VARCHAR" property="itemCategory" />
+    <result column="item_description" jdbcType="TIME" property="itemDescription" />
+  </resultMap>
+</mapper>

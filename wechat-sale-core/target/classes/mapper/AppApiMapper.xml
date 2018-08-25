@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.AppApiMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.AppApi">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="accessToken" jdbcType="VARCHAR" property="accesstoken" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-draggable mui-slide-in">
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-pull-left" href="IntegralMall.html">
+						<span class="mui-icon-back"></span>
+					</a>
+					<h1 class="mui-title">兑换历史</h1>
+					
+				</header>
+				<nav class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item" href="Anti-counterfeiting.html">
+						<span class="mui-icon mui-icon-search"></span>
+						<span class="mui-tab-label">防伪查询</span>
+					</a>
+					<a class="mui-tab-item" href="IntegralMall.html">
+						<span class="mui-icon mui-icon-home"></span>
+						<span class="mui-tab-label">积分商城</span>
+					</a>
+					<a class="mui-tab-item" href="Report.html">
+						<span class="mui-icon mui-icon-phone"></span>
+						<span class="mui-tab-label">举报</span>
+					</a>
+				</nav>
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-slider">
+							<ul	class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<a href="">
+										<img class="mui-media-object mui-pull-left" src="images/qq.png" />
+										<div class="mui-media-body">
+											QQ
+											<p class="mui-ellipsis">这QQ有点假</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="">
+										<img class="mui-media-object mui-pull-left" src="images/qq.png" />
+										<div class="mui-media-body">
+											QQ
+											<p class="mui-ellipsis">这QQ有点假</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		mui('body').on('tap','a',function(){
+    window.top.location.href=this.href;});
+		</script>
+	</body>
+
+</html>
