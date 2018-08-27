@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>下级信息</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
 
 	</head>
 <style type="text/css">
@@ -19,27 +19,27 @@
 	<body>
 		<div class="mui-inner-wrap">
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-icon mui-pull-left" href="Lower_Level_Management.html"><span class="mui-icon-back" ></span></a>
+				<a class="mui-icon mui-pull-left" href="/lowerlevel"><span class="mui-icon-back" ></span></a>
 				<h1 class="mui-title">下级信息</h1>
 			</header>
 			<nav class="mui-bar mui-bar-tab">
-				<a class="mui-tab-item" href="">
+				<a class="mui-tab-item" href="/delivery">
 					<span class="mui-icon mui-icon-undo"></span>
 					<span class="mui-tab-label">发货</span>
 				</a>
-				<a class="mui-tab-item" href="">
+				<a class="mui-tab-item" href="/orders">
 					<span class="mui-icon mui-icon-list"></span>
 					<span class="mui-tab-label">订单</span>
 				</a>
-				<a class="mui-tab-item" href="">
+				<a class="mui-tab-item" href="/stock">
 					<span class="mui-icon mui-icon-home"></span>
 					<span class="mui-tab-label">库存</span>
 				</a>
-				<a class="mui-tab-item" href="">
+				<a class="mui-tab-item" href="/lowerlevel">
 					<span class="mui-icon mui-icon-download"></span>
 					<span class="mui-tab-label">下级</span>
 				</a>
-				<a class="mui-tab-item mui-active" href="">
+				<a class="mui-tab-item" href="/person">
 					<span class="mui-icon mui-icon-person"></span>
 					<span class="mui-tab-label">个人</span>
 				</a>
@@ -78,7 +78,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/mui.min.js"></script>
+		<script src="../static/js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
 			mui('body').on('tap','a',function(){

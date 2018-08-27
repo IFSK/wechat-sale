@@ -8,6 +8,8 @@ public class userApplication {
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(userApplication.class, args);
+		System.out.println("user");
+		System.out.println("*****************");
 	}
 
 }

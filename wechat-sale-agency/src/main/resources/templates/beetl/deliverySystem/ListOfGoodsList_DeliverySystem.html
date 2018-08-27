@@ -50,27 +50,26 @@
 	<body>
 		<div class="mui-inner-wrap">
 			<header class="mui-bar mui-bar-nav">
-				<!--<a class="mui-icon mui-pull-left" href="Warehousing.html"><span class="mui-icon-back" ></span></a>-->
 				<h1 class="mui-title">货单列表</h1>
 			</header>
 			<nav class="mui-bar mui-bar-tab">
-				<a class="mui-tab-item  mui-active" href="ListOfGoodsList_DeliverySystem.html">
+				<a class="mui-tab-item  mui-active" href="/delivery">
 					<span class="mui-icon mui-icon-undo"></span>
 					<span class="mui-tab-label">发货</span>
 				</a>
-				<a class="mui-tab-item" href="../OrderSystem/Subordinate.html">
+				<a class="mui-tab-item" href="/orders">
 					<span class="mui-icon mui-icon-list"></span>
 					<span class="mui-tab-label">订单</span>
 				</a>
-				<a class="mui-tab-item" href="Warehousing.html">
+				<a class="mui-tab-item" href="/stock">
 					<span class="mui-icon mui-icon-home"></span>
 					<span class="mui-tab-label">库存</span>
 				</a>
-				<a class="mui-tab-item" href="../LowerLevelManagement/LowerLevelManagement.html">
+				<a class="mui-tab-item" href="/lowerlevel">
 					<span class="mui-icon mui-icon-download"></span>
 					<span class="mui-tab-label">下级</span>
 				</a>
-				<a class="mui-tab-item" href="../PersonalCenter/PersonalInformation.html">
+				<a class="mui-tab-item" href="/person">
 					<span class="mui-icon mui-icon-person"></span>
 					<span class="mui-tab-label">个人</span>
 				</a>
@@ -97,9 +96,9 @@
 								</tr>
 							</table>
 							<div class="mui-pull-right">
-								<a href="../orderDetail.html" class="mui-btn mui-btn-link">详情</a><br />
+								<a href="/orders/detail" class="mui-btn mui-btn-link">详情</a><br />
 								<a href="#" class="mui-btn mui-btn-link">扫码</a><br />
-								<a href="3" class="mui-btn mui-btn-link">填码</a>
+								<a href="/delivery/fillCode" class="mui-btn mui-btn-link">填码</a>
 							</div>
 						</li>
 						<li class="mui-table-view-divider mui-media mui-checkbox mui-left mui-row" >
@@ -116,9 +115,9 @@
 								</tr>
 							</table>
 							<div class="mui-pull-right">
-								<a href="orderDetail.html" class="mui-btn mui-btn-link">详情</a><br />
+								<a href="/orders/detail" class="mui-btn mui-btn-link">详情</a><br />
 								<a href="#" class="mui-btn mui-btn-link">扫码</a><br />
-								<a href="fillInCode.html" class="mui-btn mui-btn-link">填码</a>
+								<a href="/delivery/fillCode" class="mui-btn mui-btn-link">填码</a>
 							</div>
 						</li>
 					</ul>
@@ -127,7 +126,7 @@
 				<div id="uncollectedGoods" class="mui-control-content">
 					<ul class="mui-table-view" id="orders">
 						<li class="mui-table-view-cell mui-media">
-							<a class="mui-navigate-right" href="orderDetail.html">
+							<a class="mui-navigate-right" href="/orders/detail">
 								<table>
 									<tr>
 										<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
@@ -148,7 +147,7 @@
 				<div id="haveReceivedTheGoods" class="mui-control-content">
 					<ul class="mui-table-view" id="orders">
 						<li class="mui-table-view-cell mui-media">
-							<a class="mui-navigate-right" href="orderDetail.html">
+							<a class="mui-navigate-right" href="/orders/detail">
 								<table>
 									<tr>
 										<td class="img"><img class="mui-media-object mui-pull-left" src="images/weixin.png"/></td>
@@ -170,7 +169,7 @@
 	</body>
 	<script src="../static/js/mui.min.js"></script>
 	<script src="../static/js/mui.indexedlist.js"></script>
-	<script src="../static/js/mui.grouplist.testdata.js">
+	<script src="../static/js/mui.grouplist.testdata.js"></script>
 	<script type="text/javascript">
 		mui.init();
 		mui('body').on('tap','a',function(){
