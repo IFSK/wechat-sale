@@ -1,2 +1,14 @@
+xyz\oilpea\wechat\sale\headquarters\pojo\Headquartersstock.class
+xyz\oilpea\wechat\sale\headquarters\mapper\HeadquartersorderdetailMapper.class
+xyz\oilpea\wechat\sale\headquarters\mapper\HeadquartersscoreorderdetailMapper.class
+xyz\oilpea\wechat\sale\headquarters\pojo\Headquartersscoreorderdetail.class
 xyz\oilpea\wechat\sale\headquarters\HeadQuartersApplication.class
+xyz\oilpea\wechat\sale\headquarters\mapper\HeadquartersscoreordersMapper.class
+xyz\oilpea\wechat\sale\headquarters\pojo\Headquartersorderdetail.class
 xyz\oilpea\wechat\sale\headquarters\web\controller\IndexController.class
+xyz\oilpea\wechat\sale\headquarters\pojo\Headquartersorders.class
+xyz\oilpea\wechat\sale\headquarters\pojo\Headquartersscoreorders.class
+xyz\oilpea\wechat\sale\headquarters\mapper\HeadquartersordersMapper.class
+xyz\oilpea\wechat\sale\headquarters\service\TestService.class
+xyz\oilpea\wechat\sale\headquarters\mapper\HeadquartersstockMapper.class
+xyz\oilpea\wechat\sale\headquarters\service\impl\TestServiceImpl.class

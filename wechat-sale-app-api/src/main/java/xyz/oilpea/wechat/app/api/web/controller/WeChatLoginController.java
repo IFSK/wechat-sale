@@ -4,18 +4,22 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 import org.apache.http.client.ClientProtocolException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import net.sf.json.JSONObject;
+import xyz.oilpea.wechat.app.api.service.UserService;
+import xyz.oilpea.wechat.app.api.service.impl.UserServiceImpl;
 import xyz.oilpea.wechat.app.api.util.AuthUtil;
 
 @Controller
-@RequestMapping("/weixin")
+@RequestMapping("/wechat")
 public class WeChatLoginController {
 	private static final long serialVersionUID = 1L;
+	@Autowired
+	UserService us;
 
 	@GetMapping("/login")
 	public String auth() {
@@ -25,7 +29,7 @@ public class WeChatLoginController {
 		// 回调地址
 		// String backUrl = "http://suliu.free.ngrok.cc/WxAuth/callBack"; //第1种情况使用
 		System.out.println("l1");
-		String backUrl = "http://www.oilpea.xyz/weixin/userinfo";// 第2种情况使用，这里是web.xml中的路径
+		String backUrl = "http://www.oilpea.xyz/wechat/userinfo";// 第2种情况使用，这里是web.xml中的路径
 
 		// 授权页面地址
 		String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + AuthUtil.APPID + "&redirect_uri="
@@ -70,7 +74,14 @@ public class WeChatLoginController {
 		JSONObject userInfo = AuthUtil.doGetJson(infoUrl);
 		System.out.println("登录成功");
 		System.out.println(userInfo);
+		us.userLogin(openid);
 		String indexurl = "www.oilpea.xyz/user/index";
 		return "redirect:" + url;
+	}
+
+	@GetMapping("/test")
+	public void test() {
+		System.out.println("test");
+		new UserServiceImpl().test();
 	}
 }

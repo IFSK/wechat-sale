@@ -1,2 +1,10 @@
+xyz\oilpea\wechat\agency\mapper\AgencyorderdetailMapper.class
+xyz\oilpea\wechat\agency\mapper\AgencystockMapper.class
+xyz\oilpea\wechat\agency\mapper\AgencyMapper.class
+xyz\oilpea\wechat\agency\pojo\Agencyorders.class
+xyz\oilpea\wechat\agency\pojo\Agency.class
 xyz\oilpea\wechat\agency\web\controller\LoginController.class
+xyz\oilpea\wechat\agency\mapper\AgencyordersMapper.class
+xyz\oilpea\wechat\agency\pojo\Agencyorderdetail.class
 xyz\oilpea\wechat\agency\AgencyApplication.class
+xyz\oilpea\wechat\agency\pojo\Agencystock.class

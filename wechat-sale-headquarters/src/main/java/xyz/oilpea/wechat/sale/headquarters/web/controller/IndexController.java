@@ -5,14 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import xyz.oilpea.wechat.sale.core.User;
 
 
 @Controller
 @RequestMapping("/index")
 public class IndexController {
-	@Autowired
-	User user;
 
 	@GetMapping()
 	public String jumpindex() {

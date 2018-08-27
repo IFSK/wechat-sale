@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-draggable mui-slide-in">
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-pull-left" href="ReportRecord.html">
+						<span class="mui-icon-back"></span>
+					</a>
+					<h1 class="mui-title">举报</h1>
+					
+				</header>
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-slider">
+							<ul	class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<h5 align="center">请输入被举报者的用户名</h5>
+									<div class="mui-input-group">
+									    <div class="mui-input-row">
+									        <input name="username" type="text" class="mui-input-clear" placeholder="请输入用户名" value="">
+									    </div>
+									</div>
+								</li>
+								<li class="mui-table-view-cell">
+									<h5 align="center">举报原由</h5>
+									<textarea name=""reason rows="8"></textarea>
+								</li>
+								<li class="mui-table-view-cell">
+									<div class="mui-content-padded">
+										<button type="button" class="mui-btn mui-btn-success mui-btn-block">提交</button>
+									</div>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

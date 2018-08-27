@@ -3,7 +3,7 @@ package xyz.oilpea.wechat.sale.core.pojo;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-
+@Entity
 @Table(name = "user")
 public class User implements Serializable {
     @Id
