@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = { "xyz.oilpea.wechat" })
-@MapperScan(basePackages = "xyz.oilpea.wechat.app.api.mapper")
+@MapperScan("xyz.oilpea.wechat.app.api.mapper")
 @SpringBootApplication
 @EnableTransactionManagement(proxyTargetClass = true)
 @EnableAutoConfiguration
