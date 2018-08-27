@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>更多信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+
+	</head>
+<style type="text/css">
+	h4{
+		float: left;
+	}
+</style>
+	<body>
+		<div class="mui-inner-wrap">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-icon mui-pull-left" href="Personal_Information.html"><span class="mui-icon-back" style="color: black;"></span></a>
+				<h1 class="mui-title">更多信息</h1>
+				
+			</header>
+			<div class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="mui-slider">
+						<ul	class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<h4>ID</h4>
+								<span class="mui-pull-right">Agency.agencyId</span>
+							</li>
+						</ul><br />
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<h4>真实姓名</h4>
+								<span class="mui-pull-right">Agency.realname</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>身份证</h4>
+								<span class="mui-pull-right">Agency.idCard</span>
+							</li>
+						</ul><br />
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<h4>级别</h4>
+								<span class="mui-pull-right">Agency.level</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>级别ID</h4>
+								<span class="mui-pull-right">Agency.superiorId</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>授权码</h4>
+								<span class="mui-pull-right">Agency.invitationCode</span>
+							</li>
+						</ul><br />
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<h4>创建时间</h4>
+								<span class="mui-pull-right">Agency.createtime</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<a href="bank_card.html">
+									<h4>绑定的银行卡</h4>
+									<span class="mui-pull-right mui-icon mui-icon-arrowright"></span>
+								</a>
+							</li>
+						</ul><br />
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<h4>状态</h4>
+								<span class="mui-pull-right">Agency.status</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('body').on('tap','a',function(){
+    		window.top.location.href=this.href;});
+		</script>
+	</body>
+
+</html>

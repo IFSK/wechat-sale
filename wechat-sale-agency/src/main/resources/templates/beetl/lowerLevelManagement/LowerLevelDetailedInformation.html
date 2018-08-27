@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>下级信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+
+	</head>
+<style type="text/css">
+	h4{
+		float: left;
+	}
+	a{
+		color: black;
+	}
+</style>
+	<body>
+		<div class="mui-inner-wrap">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-icon mui-pull-left" href="/lowerlevel"><span class="mui-icon-back" ></span></a>
+				<h1 class="mui-title">下级信息</h1>
+			</header>
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" href="/delivery">
+					<span class="mui-icon mui-icon-undo"></span>
+					<span class="mui-tab-label">发货</span>
+				</a>
+				<a class="mui-tab-item" href="/orders">
+					<span class="mui-icon mui-icon-list"></span>
+					<span class="mui-tab-label">订单</span>
+				</a>
+				<a class="mui-tab-item" href="/stock">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">库存</span>
+				</a>
+				<a class="mui-tab-item" href="/lowerlevel">
+					<span class="mui-icon mui-icon-download"></span>
+					<span class="mui-tab-label">下级</span>
+				</a>
+				<a class="mui-tab-item" href="/person">
+					<span class="mui-icon mui-icon-person"></span>
+					<span class="mui-tab-label">个人</span>
+				</a>
+			</nav>
+			<div class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="mui-slider">
+						<ul	class="mui-table-view">
+							<li class="mui-table-view-cell" style="height: 220px;">
+								<img src="images/user-photo.png" style="display:block;width: 200px;height: 200px; margin:auto;" name="icon"/>
+								
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>微信号</h4>
+								<span class="mui-pull-right">Agency.wechatId</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>用户名</h4>
+								<span class="mui-pull-right">Agency.username</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>手机号</h4>
+								<span class="mui-pull-right">Agency.phone</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>Email</h4>
+								<span class="mui-pull-right">Agency.email</span>
+							</li>
+							<li class="mui-table-view-cell">
+								<h4>地址</h4>
+								<span class="mui-pull-right">Agency.address</span>
+							</li>
+						</ul><br /><br />
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../static/js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('body').on('tap','a',function(){
+    		window.top.location.href=this.href;});
+		</script>
+	</body>
+
+</html>
