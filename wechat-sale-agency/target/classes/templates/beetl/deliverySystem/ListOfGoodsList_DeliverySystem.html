@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>货单列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+		<link href="../static/css/icons-extra.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../static/css/app.css" />
+	</head>
+<style type="text/css">
+	html,
+	body {
+		background-color: #efeff4;
+	}
+	h4{
+			float: left;
+		}
+	.img{
+		padding-left: 5px;
+		width: 60px;
+	}
+	span{
+		/*color: black;*/
+	}
+	font{
+		color: black;
+	}
+	h5{
+		color: brown;
+	}
+	#sliderSegmentedControl{
+		width: 100%;
+		position: fixed;
+		top: 40px;
+		z-index: 1;
+		background-color: #efeff4;
+		color: black;
+	}
+	#orders{
+		margin-top: 45px;
+	}
+	h3{
+		color: black;
+	}
+</style>
+	<body>
+		<div class="mui-inner-wrap">
+			<header class="mui-bar mui-bar-nav">
+				<!--<a class="mui-icon mui-pull-left" href="Warehousing.html"><span class="mui-icon-back" ></span></a>-->
+				<h1 class="mui-title">货单列表</h1>
+			</header>
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item  mui-active" href="ListOfGoodsList_DeliverySystem.html">
+					<span class="mui-icon mui-icon-undo"></span>
+					<span class="mui-tab-label">发货</span>
+				</a>
+				<a class="mui-tab-item" href="../OrderSystem/Subordinate.html">
+					<span class="mui-icon mui-icon-list"></span>
+					<span class="mui-tab-label">订单</span>
+				</a>
+				<a class="mui-tab-item" href="Warehousing.html">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">库存</span>
+				</a>
+				<a class="mui-tab-item" href="../LowerLevelManagement/LowerLevelManagement.html">
+					<span class="mui-icon mui-icon-download"></span>
+					<span class="mui-tab-label">下级</span>
+				</a>
+				<a class="mui-tab-item" href="../PersonalCenter/PersonalInformation.html">
+					<span class="mui-icon mui-icon-person"></span>
+					<span class="mui-tab-label">个人</span>
+				</a>
+			</nav>
+			<div class="mui-content">
+				<div id="sliderSegmentedControl" class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item mui-active" href="#unshippedDelivery">未发货</a>
+					<a class="mui-tab-item" href="#uncollectedGoods">未收货</a>
+					<a class="mui-tab-item" href="#haveReceivedTheGoods">已收货</a>
+				</div>
+				<div id="unshippedDelivery" class="mui-control-content mui-active">
+					<ul	class="mui-table-view" id="orders">
+						<li class="mui-table-view-divider mui-media mui-checkbox mui-left mui-row">
+							<table class="mui-col-xs-10">
+								<tr>
+									<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
+									<td>
+										<div class="mui-media-body">
+											<font style="font-size: 25px;">agencyStock.itemName</font>
+											<h5>价格：agencyStock.itemPrice</h5>
+											<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+										</div> 
+									</td>
+								</tr>
+							</table>
+							<div class="mui-pull-right">
+								<a href="../orderDetail.html" class="mui-btn mui-btn-link">详情</a><br />
+								<a href="#" class="mui-btn mui-btn-link">扫码</a><br />
+								<a href="3" class="mui-btn mui-btn-link">填码</a>
+							</div>
+						</li>
+						<li class="mui-table-view-divider mui-media mui-checkbox mui-left mui-row" >
+							<table class="mui-col-xs-10">
+								<tr>
+									<td class="img"><img class="mui-media-object mui-pull-left" src="images/user-photo.png"/></td>
+									<td>
+										<div class="mui-media-body">
+											<font style="font-size: 25px;">agencyStock.itemName</font>
+											<h5>价格：agencyStock.itemPrice</h5>
+											<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+										</div> 
+									</td>
+								</tr>
+							</table>
+							<div class="mui-pull-right">
+								<a href="orderDetail.html" class="mui-btn mui-btn-link">详情</a><br />
+								<a href="#" class="mui-btn mui-btn-link">扫码</a><br />
+								<a href="fillInCode.html" class="mui-btn mui-btn-link">填码</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="uncollectedGoods" class="mui-control-content">
+					<ul class="mui-table-view" id="orders">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="orderDetail.html">
+								<table>
+									<tr>
+										<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
+										<td>
+											<div class="mui-media-body">
+												<font style="font-size: 25px;">agencyStock.itemName</font>
+												<h5>价格：agencyStock.itemPrice</h5>
+												<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+											</div>
+										</td>
+									</tr>
+								</table>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="haveReceivedTheGoods" class="mui-control-content">
+					<ul class="mui-table-view" id="orders">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="orderDetail.html">
+								<table>
+									<tr>
+										<td class="img"><img class="mui-media-object mui-pull-left" src="images/weixin.png"/></td>
+										<td>
+											<div class="mui-media-body">
+												<font style="font-size: 25px;">agencyStock.itemName</font>
+												<h5>价格：agencyStock.itemPrice</h5>
+												<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+											</div>
+										</td>
+									</tr>
+								</table>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../static/js/mui.min.js"></script>
+	<script src="../static/js/mui.indexedlist.js"></script>
+	<script src="../static/js/mui.grouplist.testdata.js">
+	<script type="text/javascript">
+		mui.init();
+		mui('body').on('tap','a',function(){
+			window.top.location.href=this.href;
+		});
+	</script>
+</html>

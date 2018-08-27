@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AgencyApplication {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(AgencyApplication.class, args);
+		System.out.println("agency");
 	}
 
 }

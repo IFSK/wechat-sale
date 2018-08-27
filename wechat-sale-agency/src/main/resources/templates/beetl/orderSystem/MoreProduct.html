@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的订单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link href="../css/mui.indexedlist.css" rel="stylesheet" />
+	</head>
+<style type="text/css">
+	h4{
+		float: left;
+	}
+	.input{
+		background-color: #333333;
+	}
+	label{
+		color: white;
+	}
+	.home{
+		color: black;
+	}
+</style>
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!--右侧滑菜单部分-->
+			<aside id="offCanvasSideRight" class="mui-off-canvas-right">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<header class="mui-bar mui-bar-nav">
+							<h1 class="mui-title">产品选择</h1>
+							<button id="offCanvasHideRight" type="button" class="mui-btn mui-btn-link mui-pull-right">确认</button>
+						</header>
+						<div class="mui-content">
+							<div id='listRight' class="mui-indexed-list input">
+								<div class="mui-indexed-list-search mui-input-row mui-search">
+									<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索">
+								</div>
+								<div class="mui-indexed-list-bar" style="width: 0px"></div>
+								<div class="mui-indexed-list-alert"></div>
+								<div class="mui-indexed-list-inner">
+									<div class="mui-indexed-list-empty-alert">没有数据</div>
+									<form class="mui-input-group input">
+										<div class="mui-input-row mui-checkbox">
+											<label>产品1</label>
+											<input name="radio1" type="checkbox">
+										</div>
+										<div class="mui-input-row mui-checkbox">
+											<label>产品2</label>
+											<input name="radio1" type="checkbox" checked="checked">
+										</div>
+										<div class="mui-input-row mui-checkbox">
+											<label>产品3</label>
+											<input name="radio1" type="checkbox" checked="checked">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<!--左侧滑菜单部分-->
+			<aside id="offCanvasSideLeft" class="mui-off-canvas-left">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<header class="mui-bar mui-bar-nav">
+							<h1 class="mui-title">产品选择</h1>
+							<button id="offCanvasHideLeft" type="button" class="mui-btn mui-btn-link mui-pull-right">确认</button>
+						</header>
+						<div class="mui-content">
+							<div id='listLeft' class="mui-indexed-list input">
+								<div class="mui-indexed-list-search mui-input-row mui-search">
+									<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索">
+								</div>
+								<div class="mui-indexed-list-bar" style="width: 0px"></div>
+								<div class="mui-indexed-list-alert"></div>
+								<div class="mui-indexed-list-inner">
+									<div class="mui-indexed-list-empty-alert">没有数据</div>
+									<form class="mui-input-group input">
+										<div class="mui-input-row">
+											<label>产品2</label>
+											<input type="text" class="mui-input-clear" placeholder="请输入数量">
+										</div>
+										<div class="mui-input-row">
+											<label>产品3</label>
+											<input type="text" class="mui-input-clear" placeholder="请输入数量">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-pull-left" href="Personal_Information.html"><span class="mui-icon-back" style="color: black;"></span></a>
+					<h1 class="mui-title">我的订单</h1>
+					<!--<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>-->
+				</header>
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="mui-slider">
+							<form class="mui-input-group">
+								<ul	class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<h4>订单编号</h4>
+										<span class="mui-pull-right">123456789</span>
+									</li>
+								</ul>
+								<div class="mui-input-row"></div>
+								<div class="mui-input-row">
+									<label class="home">产品选择</label>
+									<button type="button" class=" mui-btn-link mui-pull-right">
+										<a href="#offCanvasSideRight" class="mui-icon mui-action-menu mui-icon-bars"></a>
+									</button>
+								</div>
+								<div class="mui-input-row">
+									<label class="home">已选择</label>
+									<button type="button" class=" mui-btn-link mui-pull-right">
+										<a href="#offCanvasSideLeft" class="mui-icon mui-action-menu mui-icon-bars"></a>
+									</button>
+								</div>
+								<div class="mui-input-row"><h5 style="position: relative;top: 18px;">收货人信息：</h5></div>
+								
+								<div class="mui-input-row">
+									<label class="home">用户名</label>
+									<input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+								</div>
+								<div class="mui-input-row">
+									<label class="home">联系电话</label>
+									<input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+								</div>
+								<div class="mui-input-row">
+									<label class="home">收货地址</label>
+									<input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+								</div>
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<div class="mui-content-padded">
+											<button type="button" class="mui-btn mui-btn-success mui-btn-block">下订单</button>
+										</div>
+									</li>
+								</ul>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.picker.js"></script>
+	<script src="../js/mui.poppicker.js"></script>
+	<script src="../js/mui.indexedlist.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		mui('body').on('tap','a',function(){
+		window.top.location.href=this.href;});
+		
+//		隐藏菜单
+		var offCanvasWrapper = mui('#offCanvasWrapper');
+		document.getElementById('offCanvasHideRight').addEventListener('tap', function() {
+			offCanvasWrapper.offCanvas('close');
+		});
+		document.getElementById('offCanvasHideLeft').addEventListener('tap', function() {
+			offCanvasWrapper.offCanvas('close');
+		});
+		
+		
+		mui.ready(function() {
+			var header = document.querySelector('header.mui-bar');
+			var listRight = document.getElementById('listRight');
+			listRight.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+			window.indexedList = new mui.IndexedList(listRight);
+			
+			var listLeft = document.getElementById('listLeft');
+			listLeft.style.height = (document.body.offsetHeight - header.offsetHeight) + 'px';
+			window.indexedList = new mui.IndexedList(listLeft);
+		});
+	</script>
+</html>

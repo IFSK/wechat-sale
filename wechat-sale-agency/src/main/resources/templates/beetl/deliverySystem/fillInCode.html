@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>手动填码</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+	</head>
+<style type="text/css">
+	h4{
+		float: left;
+	}
+	h5{
+		margin-left: 20px;
+	}
+</style>
+	<body>
+		<div class="mui-inner-wrap">
+			<header class="mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav" style="color: black;"></span>
+				</button>
+				<h1 class="mui-title">手动填码</h1>
+			</header>
+			<div class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<form class="mui-input-group">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<h5>请填入商品码：</h5>
+								<div class="mui-input-row mui-password">
+									<input type="text" class="mui-input-clear">
+								</div>
+							</li>
+							<li class="mui-table-view-cell" style="height: 150px;"></li>
+							<li class="mui-table-view-cell">
+								<div class="mui-content-padded">
+									<button type="button" class="mui-btn mui-btn-success mui-btn-block">确认发货</button>
+								</div>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../static/js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		mui('body').on('tap','a',function(){
+    		window.top.location.href=this.href;
+		});
+	</script>
+</html>
