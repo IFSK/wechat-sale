@@ -25,7 +25,7 @@ public class IAgencyService implements AgencyService {
 	ItemstypeMapper im;
 
 	@Autowired
-	AgencyMapper mapper;
+	AgencyMapper agencymapper;
 
 	@Autowired
 	AgencyordersMapper ordersMapper;
@@ -44,29 +44,29 @@ public class IAgencyService implements AgencyService {
 		// TODO Auto-generated method stub
 		return im.selectAll();
 	}
-	
-	
+
+
 	@Override
 	public Agency queryAgencyByWechatId(String wechatId) {
 		// TODO Auto-generated method stub
-		return mapper.selectOneByExample(wechatId);
+		return agencymapper.selectOneByExample(wechatId);
 	}
-	
-	
-	
-	
+
+
+
+
 
 	@Override
 	public Agency queryAgencyById(int agencyId) {
 		// TODO Auto-generated method stub
-		return mapper.selectByPrimaryKey(agencyId);
+		return agencymapper.selectByPrimaryKey(agencyId);
 	}
 
 	// 下级
 	@Override
 	public List<Agency> queryAencyByInvitationCode(String invitationCode) {// 通过邀请码查看下级
 		// TODO Auto-generated method stub
-		return mapper.selectByExample(invitationCode);
+		return agencymapper.selectByExample(invitationCode);
 	}
 
 	// 库存
@@ -76,22 +76,19 @@ public class IAgencyService implements AgencyService {
 		return stockMapper.selectByExample(agencyId);
 	}
 
-<<<<<<< HEAD
 	// 订单
-=======
 
 
 
 //订单
 	//查询经销商未发货订单：
 //		经销商id——>经销商邀请码——>下级id(接受者id)+订单状态——>经销商未发货订单
->>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
 	@Override
 	public List<Agencyorders> queryOrdersByReceiveIdAndState(int agencyId, int orderState) {
 		// TODO Auto-generated method stub
-		Agency agency=mapper.selectByPrimaryKey(agencyId);
+		Agency agency=agencymapper.selectByPrimaryKey(agencyId);
 		String invitationCode=agency.getInvitationCode()+".";
-		List<Agency> agencyList=mapper.selectByExample(invitationCode);
+		List<Agency> agencyList=agencymapper.selectByExample(invitationCode);
 		List<Integer> lowerLevelId=null;
 		for (Agency agency2 : agencyList) {
 			lowerLevelId.add(agency2.getAgencyId());
@@ -104,16 +101,20 @@ public class IAgencyService implements AgencyService {
 		return null;
 	}
 
-<<<<<<< HEAD
-=======
+	@Override
+	public void AgencyLogin(String openid) {
+		Agency agency = new Agency();
+		agency.setWechatId(openid);
+		Agency agency2 = agencymapper.selectOne(agency);
+		if (agency2 == null) {
+			agency2 = new Agency();
+			agency2.setStatus(1);
+			agency2.setWechatId(openid);
+			agencymapper.insert(agency2);
+		}
+	}
 
 
 
 
-	
-
-
-	
-	
->>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
 }

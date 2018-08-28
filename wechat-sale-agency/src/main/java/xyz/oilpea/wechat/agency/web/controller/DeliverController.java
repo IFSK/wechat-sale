@@ -15,23 +15,14 @@ import xyz.oilpea.wechat.agency.service.AgencyService;
 public class DeliverController {
 
 	@Autowired
-<<<<<<< HEAD
 	AgencyService service;
 
 
-=======
-	AgencyService service; 
-	
-	
->>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
-	@GetMapping()
-<<<<<<< HEAD
-	public String List() {
 
-=======
+
+	@GetMapping()
 	public String List(@RequestParam(name="wechatId")String wechatId) {
 		Agency agency=service.queryAgencyByWechatId(wechatId);
->>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
 		return "beetl/deliverySystem/ListOfGoodsList_DeliverySystem.html";
 	}
 
