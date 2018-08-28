@@ -1,5 +1,10 @@
 package xyz.oilpea.wechat.sale.score.service;
 
+
+
 public interface ScoreService {
-	public void test();
+	
+	
+	
+	public void queryUserByWechatId(String wechatID);
 }
