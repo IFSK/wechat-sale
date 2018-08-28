@@ -15,6 +15,7 @@
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="send_address" jdbcType="VARCHAR" property="sendAddress" />
     <result column="sned_phone" jdbcType="VARCHAR" property="snedPhone" />
+    <result column="state" jdbcType="INTEGER" property="state" />
     <result column="remarks" jdbcType="LONGVARCHAR" property="remarks" />
   </resultMap>
 </mapper>
