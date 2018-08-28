@@ -35,6 +35,9 @@ public class Headquartersorders implements Serializable {
     @Column(name = "sned_phone")
     private String snedPhone;
 
+    @Column(name = "state")
+    private Integer state;
+
     @Column(name = "remarks")
     private String remarks;
 
@@ -164,6 +167,20 @@ public class Headquartersorders implements Serializable {
      */
     public void setSnedPhone(String snedPhone) {
         this.snedPhone = snedPhone == null ? null : snedPhone.trim();
+    }
+
+    /**
+     * @return state
+     */
+    public Integer getState() {
+        return state;
+    }
+
+    /**
+     * @param state
+     */
+    public void setState(Integer state) {
+        this.state = state;
     }
 
     /**
