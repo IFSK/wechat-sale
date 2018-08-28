@@ -20,7 +20,7 @@ public class WeChatLoginController {
 	@Autowired
 	AgencyService agencyService;
 
-	@GetMapping("/login")
+	@GetMapping("/agencylogin")
 	public String auth() {
 
 		// 第一步：引导用户进入授权页面同意授权，获取code

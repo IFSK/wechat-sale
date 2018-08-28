@@ -4,12 +4,14 @@ xyz\oilpea\wechat\agency\pojo\Itemstype.class
 xyz\oilpea\wechat\agency\web\controller\TestController.class
 xyz\oilpea\wechat\agency\mapper\AgencyMapper.class
 xyz\oilpea\wechat\agency\AgencyApplication.class
+xyz\oilpea\wechat\agency\conf\BeetlConf.class
 xyz\oilpea\wechat\agency\pojo\Agency.class
 xyz\oilpea\wechat\agency\web\controller\LoginController.class
 xyz\oilpea\wechat\agency\mapper\AgencyordersMapper.class
 xyz\oilpea\wechat\agency\web\controller\WarehousingController.class
 xyz\oilpea\wechat\agency\web\controller\OrdersController.class
 xyz\oilpea\wechat\agency\pojo\Agencystock.class
+xyz\oilpea\wechat\agency\web\controller\WeChatLoginController.class
 xyz\oilpea\wechat\agency\web\controller\DeliverController.class
 xyz\oilpea\wechat\agency\service\AgencyService.class
 xyz\oilpea\wechat\agency\pojo\Agencyorders.class
@@ -18,4 +20,5 @@ xyz\oilpea\wechat\agency\web\controller\PersonalController.class
 xyz\oilpea\wechat\agency\util\MyMapper.class
 xyz\oilpea\wechat\agency\service\impl\IAgencyService.class
 xyz\oilpea\wechat\agency\pojo\Agencyorderdetail.class
+xyz\oilpea\wechat\agency\util\AuthUtil.class
 xyz\oilpea\wechat\agency\web\controller\LowerLevelController.class

@@ -3,9 +3,11 @@ C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wecha
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\web\controller\WarehousingController.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\web\controller\LowerLevelController.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\web\controller\PersonalController.java
+C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\web\controller\WeChatLoginController.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\web\controller\DeliverController.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\web\controller\OrdersController.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\AgencyApplication.java
+C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\util\AuthUtil.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\mapper\AgencyorderdetailMapper.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\pojo\Agencyorders.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\mapper\AgencyMapper.java
@@ -14,6 +16,7 @@ C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wecha
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\service\AgencyService.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\service\impl\IAgencyService.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\web\controller\LoginController.java
+C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\conf\BeetlConf.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\mapper\AgencystockMapper.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\pojo\Agencyorderdetail.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-agency\src\main\java\xyz\oilpea\wechat\agency\pojo\Agencystock.java
