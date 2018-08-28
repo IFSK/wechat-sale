@@ -40,7 +40,7 @@
 
 		<!-- targetProject:生成PO类的位置 targetPackage：生成pojo包的名字 -->
 		<javaModelGenerator
-			targetPackage="net.seehope.demo.user.pojo"
+			targetPackage="xyz.oilpea.wechat.sale.core.pojo"
 			targetProject="./src/test/java">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -57,14 +57,14 @@
 
 		<!-- targetPackage：mapper接口生成的位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="net.seehope.demo.user.mapper"
+			targetPackage="xyz.oilpea.wechat.sale.core.mapper"
 			targetProject="./src/test/java">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 
 		<!--通配符匹配模块前缀，生成实体类以及映射接口 -->
-		<table tableName="app_api">
+		<table tableName="%">
 			<generatedKey column="id" sqlStatement="Mysql"
 				identity="true" />
 		</table>
