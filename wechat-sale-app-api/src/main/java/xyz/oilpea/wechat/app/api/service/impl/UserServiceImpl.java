@@ -2,33 +2,30 @@ package xyz.oilpea.wechat.app.api.service.impl;
 
 import java.util.List;
 
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import xyz.oilpea.wechat.app.api.mapper.SysUserMapper;
 import xyz.oilpea.wechat.app.api.mapper.UserMapper;
 import xyz.oilpea.wechat.app.api.pojo.User;
 import xyz.oilpea.wechat.app.api.service.UserService;
 
-//@Service
+
+@Service
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper usermapper;
-	@Autowired
-	SysUserMapper sysusermapper;
-//	@Autowired
-//	User user;
 
 	@Override
 	public void userLogin(String id) {
-		User user = usermapper.selectByPrimaryKey(id);
-		if (user == null) {
-			user = new User();
-			user.setScore(0);
-			user.setStatus(1);
-			user.setWechatId(id);
-			usermapper.insert(user);
+		User user = new User();
+		user.setWechatId(id);
+		User user2 = usermapper.selectOne(user);
+		if (user2 == null) {
+			user2 = new User();
+			user2.setScore(0);
+			user2.setStatus(1);
+			user2.setWechatId(id);
+			usermapper.insert(user2);
 		}
 	}
 
@@ -43,13 +40,14 @@ public class UserServiceImpl implements UserService {
 		// usermapper.insert(user);
 	}
 
-	@Test
+	@Override
 	public void test2() {
-		List list = sysusermapper.selectAll();
-		System.out.println(list.size());
-//		System.out.println("111");
-//		user.setPhone("11");
-//		System.out.println(user.getPhone());
+		System.out.println(usermapper.selectAll().size());
+		User user = new User();
+		user.setScore(0);
+		user.setStatus(1);
+		user.setWechatId("asdasdasd");
+		usermapper.insert(user);
 	}
 
 }

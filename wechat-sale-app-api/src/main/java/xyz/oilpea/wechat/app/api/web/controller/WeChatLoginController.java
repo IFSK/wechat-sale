@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.sf.json.JSONObject;
 import xyz.oilpea.wechat.app.api.service.UserService;
-import xyz.oilpea.wechat.app.api.service.impl.UserServiceImpl;
 import xyz.oilpea.wechat.app.api.util.AuthUtil;
 
 @Controller
@@ -75,14 +74,14 @@ public class WeChatLoginController {
 		System.out.println("登录成功");
 		System.out.println(userInfo);
 		us.userLogin(openid);
-		String indexurl = "www.oilpea.xyz/user/index";
-		return "redirect:" + url;
+		return "beetl/IntegralMall";
 	}
 
 	@GetMapping("/test")
-	public void test() {
+	public String test() {
 		System.out.println("test");
-		us.test2();
-//		new UserServiceImpl().test();
+		String url = "localhost:89/user/index";
+		return "redirect:" + url;
+		// new UserServiceImpl().test();
 	}
 }

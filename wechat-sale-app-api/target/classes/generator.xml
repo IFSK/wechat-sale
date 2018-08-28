@@ -40,7 +40,11 @@
 
 		<!-- targetProject:生成PO类的位置 targetPackage：生成pojo包的名字 -->
 		<javaModelGenerator
+<<<<<<< HEAD
 			targetPackage="xyz.oilpea.wechat.app.api.pojo"
+=======
+			targetPackage="xyz.oilpea.wechat.sale.core.pojo"
+>>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
 			targetProject="./src/test/java">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -57,14 +61,22 @@
 
 		<!-- targetPackage：mapper接口生成的位置 -->
 		<javaClientGenerator type="XMLMAPPER"
+<<<<<<< HEAD
 			targetPackage="xyz.oilpea.wechat.app.api.mapper"
+=======
+			targetPackage="xyz.oilpea.wechat.sale.core.mapper"
+>>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
 			targetProject="./src/test/java">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 
 		<!--通配符匹配模块前缀，生成实体类以及映射接口 -->
+<<<<<<< HEAD
 		<table tableName="user">
+=======
+		<table tableName="%">
+>>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
 			<generatedKey column="id" sqlStatement="Mysql"
 				identity="true" />
 		</table>

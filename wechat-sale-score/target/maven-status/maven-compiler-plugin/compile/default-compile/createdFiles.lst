@@ -1,4 +1,8 @@
-xyz\oilpea\wechat\sale\core\mapper\ScoreitmeMapper.class
-xyz\oilpea\wechat\sale\core\pojo\Scoreitemstype.class
-xyz\oilpea\wechat\sale\core\mapper\ScoreitemstypeMapper.class
-xyz\oilpea\wechat\sale\core\pojo\Scoreitme.class
+xyz\oilpea\wechat\sale\score\pojo\Scoreitme.class
+xyz\oilpea\wechat\sale\score\controller\TestController.class
+xyz\oilpea\wechat\sale\score\mapper\ScoreitemstypeMapper.class
+xyz\oilpea\wechat\sale\score\mapper\ScoreitmeMapper.class
+xyz\oilpea\wechat\sale\score\pojo\Scoreitemstype.class
+xyz\oilpea\wechat\sale\score\ScoreApplication.class
+xyz\oilpea\wechat\sale\score\service\impl\Test.class
+xyz\oilpea\wechat\sale\score\service\ScoreService.class

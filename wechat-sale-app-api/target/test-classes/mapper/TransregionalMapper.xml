@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.TransregionalMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.Transregional">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="transregional_id" jdbcType="INTEGER" property="transregionalId" />
+    <result column="agency_id" jdbcType="INTEGER" property="agencyId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+  </resultMap>
+</mapper>

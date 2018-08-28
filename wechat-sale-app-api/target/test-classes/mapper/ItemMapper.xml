@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.ItemMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.Item">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="item_id" jdbcType="INTEGER" property="itemId" />
+    <result column="large_code" jdbcType="VARCHAR" property="largeCode" />
+    <result column="small_code" jdbcType="VARCHAR" property="smallCode" />
+    <result column="security_code" jdbcType="VARCHAR" property="securityCode" />
+  </resultMap>
+</mapper>

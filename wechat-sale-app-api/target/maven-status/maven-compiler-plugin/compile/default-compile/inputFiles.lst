@@ -4,11 +4,15 @@ C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wech
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\util\WeChatUserInfoUtil.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\util\AuthUtil.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\web\controller\loginController.java
+C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\pojo\SysUser.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\service\impl\UserServiceImpl.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\util\GeneratorMybatisMapper.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\mapper\AppApiMapper.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\ApiApplication.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\mapper\UserMapper.java
+C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\util\MyMapper.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\service\UserService.java
+C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\conf\BeetlConf.java
+C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\mapper\SysUserMapper.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\util\UserInfoUtil.java
 C:\Users\a1875\git\wechat-sale\wechat-sale-app-api\src\main\java\xyz\oilpea\wechat\app\api\pojo\User.java

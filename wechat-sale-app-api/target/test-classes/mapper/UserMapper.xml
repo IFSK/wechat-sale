@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper namespace="xyz.oilpea.wechat.app.api.mapper.UserMapper">
   <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.app.api.pojo.User">
+=======
+<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.User">
+>>>>>>> branch 'master' of https://github.com/IFSK/wechat-sale.git
     <!--
       WARNING - @mbg.generated
     -->

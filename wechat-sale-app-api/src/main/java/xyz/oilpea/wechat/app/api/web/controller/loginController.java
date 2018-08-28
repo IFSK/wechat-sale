@@ -8,26 +8,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import xyz.oilpea.wechat.app.api.mapper.UserMapper;
 import xyz.oilpea.wechat.app.api.pojo.User;
+import xyz.oilpea.wechat.app.api.service.UserService;
 
 @Controller
 @RequestMapping("/user")
 public class loginController {
 	@Autowired
-	private UserMapper usermapper;
+	private UserService us;
 
 	@GetMapping("/index")
-	public static String login() {
+	public String login() {
 		System.out.println("index");
-		return "beetl/IntegralMall.html";
+		return "beetl/IntegralMall";
 	}
 
 	@GetMapping("/hello")
 	public void sayHello() {
-		System.out.println("hello");
-		User user = new User();
-		user.setUserId(1);
-		usermapper.select(user);
-		System.out.println(user.getScore());
+		us.test2();
 	}
 
 }

@@ -3,6 +3,7 @@ xyz\oilpea\wechat\app\api\util\UserInfoUtil.class
 xyz\oilpea\wechat\app\api\pojo\User.class
 xyz\oilpea\wechat\app\api\ApiApplication.class
 xyz\oilpea\wechat\app\api\service\UserService.class
+xyz\oilpea\wechat\app\api\util\MyMapper.class
 xyz\oilpea\wechat\app\api\service\impl\UserServiceImpl.class
 xyz\oilpea\wechat\app\api\util\GeneratorMybatisMapper.class
 xyz\oilpea\wechat\app\api\util\AuthUtil.class
@@ -10,6 +11,9 @@ xyz\oilpea\wechat\app\api\pojo\AppApi.class
 xyz\oilpea\wechat\app\api\util\WeChatUserInfoUtil.class
 xyz\oilpea\wechat\app\api\web\controller\WeChatLoginController.class
 xyz\oilpea\wechat\app\api\mapper\UserMapper.class
+xyz\oilpea\wechat\app\api\pojo\SysUser.class
 xyz\oilpea\wechat\app\api\util\HttpsUtil.class
+xyz\oilpea\wechat\app\api\conf\BeetlConf.class
+xyz\oilpea\wechat\app\api\mapper\SysUserMapper.class
 xyz\oilpea\wechat\app\api\util\JEEWeiXinX509TrustManager.class
 xyz\oilpea\wechat\app\api\web\controller\loginController.class
