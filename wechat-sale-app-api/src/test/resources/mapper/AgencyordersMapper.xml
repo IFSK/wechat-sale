@@ -17,4 +17,6 @@
     <result column="sned_phone" jdbcType="VARCHAR" property="snedPhone" />
     <result column="remarks" jdbcType="LONGVARCHAR" property="remarks" />
   </resultMap>
+  
+  
 </mapper>

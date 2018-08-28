@@ -19,5 +19,7 @@ public interface AgencyService {
 	
 	public List<Agency> queryAencyByInvitationCode(String invitationCode);
 	
-	public List<Agencyorders> queryOrdersByAgencyIdAndState(int agencyId,int orderState);
+	public List<Agencyorders> queryOrdersByReceiveIdAndState(int agencyId,int orderState);
+	
+	public Agency queryAgencyByWechatId(String wechatId);
 }

@@ -48,6 +48,17 @@ public class IAgencyService implements AgencyService {
 		// TODO Auto-generated method stub
 		return im.selectAll();
 	}
+	
+	
+	@Override
+	public Agency queryAgencyByWechatId(String wechatId) {
+		// TODO Auto-generated method stub
+		return mapper.selectOneByExample(wechatId);
+	}
+	
+	
+	
+	
 
 	@Override
 	public Agency queryAgencyById(int agencyId) {
@@ -73,11 +84,31 @@ public class IAgencyService implements AgencyService {
 
 
 //订单
+	//查询经销商未发货订单：
+//		经销商id——>经销商邀请码——>下级id(接受者id)+订单状态——>经销商未发货订单
 	@Override
-	public List<Agencyorders> queryOrdersByAgencyIdAndState(int agencyId, int orderState) {
+	public List<Agencyorders> queryOrdersByReceiveIdAndState(int agencyId, int orderState) {
 		// TODO Auto-generated method stub
+		Agency agency=mapper.selectByPrimaryKey(agencyId);
+		String invitationCode=agency.getInvitationCode()+".";
+		List<Agency> agencyList=mapper.selectByExample(invitationCode);
+		List<Integer> lowerLevelId=null;
+		for (Agency agency2 : agencyList) {
+			lowerLevelId.add(agency2.getAgencyId());
+		}
+		List<Agencyorders> agencyorders=null;
+		for (Integer integer : lowerLevelId) {
+			agencyorders=ordersMapper.selectByExample(integer);
+		}
+		ordersMapper.selectByExample(orderState);
 		return null;
 	}
+
+
+
+
+
+	
 
 
 	
