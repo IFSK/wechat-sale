@@ -2,6 +2,7 @@ package xyz.oilpea.wechat.app.api.service;
 
 public interface UserService {
 
-	void userLogin(String openid) ;
+	void userLogin(String openid);
 
+	void test2();
 }

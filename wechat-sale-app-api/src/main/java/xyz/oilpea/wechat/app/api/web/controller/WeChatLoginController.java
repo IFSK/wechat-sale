@@ -82,6 +82,7 @@ public class WeChatLoginController {
 	@GetMapping("/test")
 	public void test() {
 		System.out.println("test");
-		new UserServiceImpl().test();
+		us.test2();
+//		new UserServiceImpl().test();
 	}
 }
