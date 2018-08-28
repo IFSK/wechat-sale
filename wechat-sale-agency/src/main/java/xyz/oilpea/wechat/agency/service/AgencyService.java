@@ -24,4 +24,6 @@ public interface AgencyService {
 	public Agency queryAgencyByWechatId(String wechatId);
 
 	public void AgencyLogin(String openid);
+
+	public void testtest() ;
 }

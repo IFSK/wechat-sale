@@ -14,6 +14,7 @@ import xyz.oilpea.wechat.agency.pojo.Agencyorders;
 import xyz.oilpea.wechat.agency.pojo.Agencystock;
 import xyz.oilpea.wechat.agency.pojo.Itemstype;
 import xyz.oilpea.wechat.agency.service.AgencyService;
+import xyz.oilpea.wechat.sale.core.mapper.ItemMapper;
 
 @Service
 public class IAgencyService implements AgencyService {
@@ -29,6 +30,12 @@ public class IAgencyService implements AgencyService {
 
 	@Autowired
 	AgencyordersMapper ordersMapper;
+	@Autowired
+	ItemstypeMapper ItemstypeMapper;
+	@Autowired
+	ItemMapper ItemMapper;
+	@Autowired
+	AgencystockMapper agencystockMapper;
 
 	@Override
 	public List<Agencystock> test(int id) {
@@ -45,16 +52,11 @@ public class IAgencyService implements AgencyService {
 		return im.selectAll();
 	}
 
-
 	@Override
 	public Agency queryAgencyByWechatId(String wechatId) {
 		// TODO Auto-generated method stub
 		return agencymapper.selectOneByExample(wechatId);
 	}
-
-
-
-
 
 	@Override
 	public Agency queryAgencyById(int agencyId) {
@@ -78,24 +80,22 @@ public class IAgencyService implements AgencyService {
 
 	// 订单
 
-
-
-//订单
-	//查询经销商未发货订单：
-//		经销商id——>经销商邀请码——>下级id(接受者id)+订单状态——>经销商未发货订单
+	// 订单
+	// 查询经销商未发货订单：
+	// 经销商id——>经销商邀请码——>下级id(接受者id)+订单状态——>经销商未发货订单
 	@Override
 	public List<Agencyorders> queryOrdersByReceiveIdAndState(int agencyId, int orderState) {
 		// TODO Auto-generated method stub
-		Agency agency=agencymapper.selectByPrimaryKey(agencyId);
-		String invitationCode=agency.getInvitationCode()+".";
-		List<Agency> agencyList=agencymapper.selectByExample(invitationCode);
-		List<Integer> lowerLevelId=null;
+		Agency agency = agencymapper.selectByPrimaryKey(agencyId);
+		String invitationCode = agency.getInvitationCode() + ".";
+		List<Agency> agencyList = agencymapper.selectByExample(invitationCode);
+		List<Integer> lowerLevelId = null;
 		for (Agency agency2 : agencyList) {
 			lowerLevelId.add(agency2.getAgencyId());
 		}
-		List<Agencyorders> agencyorders=null;
+		List<Agencyorders> agencyorders = null;
 		for (Integer integer : lowerLevelId) {
-			agencyorders=ordersMapper.selectByExample(integer);
+			agencyorders = ordersMapper.selectByExample(integer);
 		}
 		ordersMapper.selectByExample(orderState);
 		return null;
@@ -114,7 +114,9 @@ public class IAgencyService implements AgencyService {
 		}
 	}
 
+	@Override
+	public void testtest() {
 
-
+	}
 
 }
