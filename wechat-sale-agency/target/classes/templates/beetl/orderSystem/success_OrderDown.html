@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+	</head>
+<style type="text/css">
+	h4{
+		float: left;
+	}
+	h5{
+		margin-left: 20px;
+	}
+	span{
+		color: black;
+	}
+</style>
+	<body>
+		<div class="mui-inner-wrap">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-icon mui-pull-left" href="Receipt_Order.html"><span class="mui-icon-back" ></span></a>
+			</header>
+			<div class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<img src="../images/success.png" style="display:block;max-width: 50%; margin: auto; margin-top: 75px;"/>
+					<br /><br />
+					<h3 align="center">成功下单</h3>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		mui('body').on('tap','a',function(){
+    		window.top.location.href=this.href;
+		});
+	</script>
+</html>

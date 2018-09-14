@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.HeadquartersscoreordersMapper">
-  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.Headquartersscoreorders">
+<mapper namespace="xyz.oilpea.wechat.app.api.mapper.HeadquartersscoreordersMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.app.api.pojo.Headquartersscoreorders">
     <!--
       WARNING - @mbg.generated
     -->
@@ -12,7 +12,8 @@
     <result column="receive_id" jdbcType="INTEGER" property="receiveId" />
     <result column="receive_address" jdbcType="VARCHAR" property="receiveAddress" />
     <result column="receive_phone" jdbcType="VARCHAR" property="receivePhone" />
-    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="receive_name" jdbcType="VARCHAR" property="receiveName" />
+    <result column="score" jdbcType="INTEGER" property="score" />
     <result column="send_address" jdbcType="VARCHAR" property="sendAddress" />
     <result column="sned_phone" jdbcType="VARCHAR" property="snedPhone" />
     <result column="state" jdbcType="INTEGER" property="state" />

@@ -7,14 +7,14 @@ import javax.persistence.*;
 @Table(name = "agencyStock")
 public class Agencystock implements Serializable {
     @Id
+    @Column(name = "stock_id")
+    private Integer stockId;
+
     @Column(name = "item_id")
     private Integer itemId;
 
     @Column(name = "item_stock")
     private Integer itemStock;
-
-    @Column(name = "item_name")
-    private String itemName;
 
     @Column(name = "item_price")
     private BigDecimal itemPrice;
@@ -22,7 +22,24 @@ public class Agencystock implements Serializable {
     @Column(name = "agency_id")
     private Integer agencyId;
 
+    @Column(name = "item_name")
+    private String itemName;
+
     private static final long serialVersionUID = 1L;
+
+    /**
+     * @return stock_id
+     */
+    public Integer getStockId() {
+        return stockId;
+    }
+
+    /**
+     * @param stockId
+     */
+    public void setStockId(Integer stockId) {
+        this.stockId = stockId;
+    }
 
     /**
      * @return item_id
@@ -53,20 +70,6 @@ public class Agencystock implements Serializable {
     }
 
     /**
-     * @return item_name
-     */
-    public String getItemName() {
-        return itemName;
-    }
-
-    /**
-     * @param itemName
-     */
-    public void setItemName(String itemName) {
-        this.itemName = itemName == null ? null : itemName.trim();
-    }
-
-    /**
      * @return item_price
      */
     public BigDecimal getItemPrice() {
@@ -92,5 +95,19 @@ public class Agencystock implements Serializable {
      */
     public void setAgencyId(Integer agencyId) {
         this.agencyId = agencyId;
+    }
+
+    /**
+     * @return item_name
+     */
+    public String getItemName() {
+        return itemName;
+    }
+
+    /**
+     * @param itemName
+     */
+    public void setItemName(String itemName) {
+        this.itemName = itemName == null ? null : itemName.trim();
     }
 }

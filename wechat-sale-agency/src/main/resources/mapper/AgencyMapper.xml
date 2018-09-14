@@ -23,4 +23,8 @@
     <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp" />
     <result column="last_login_time" jdbcType="DATE" property="lastLoginTime" />
   </resultMap>
+  
+  <select id="queryAencyByInvitationCode" resultType="xyz.oilpea.wechat.agency.pojo.Agency" parameterType="String">
+  	select invitation_code FROM agency WHERE invitation_code LIKE '${value}%'
+  </select>
 </mapper>

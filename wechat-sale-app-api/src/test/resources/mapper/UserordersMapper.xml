@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.UserordersMapper">
-  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.Userorders">
+<mapper namespace="xyz.oilpea.wechat.app.api.mapper.UserordersMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.app.api.pojo.Userorders">
     <!--
       WARNING - @mbg.generated
     -->

@@ -3,6 +3,11 @@ package xyz.oilpea.wechat.agency.web.controller;
 import java.io.IOException;
 import java.net.URLEncoder;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.apache.http.client.ClientProtocolException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.sf.json.JSONObject;
+import xyz.oilpea.wechat.agency.pojo.Agency;
 import xyz.oilpea.wechat.agency.service.AgencyService;
 import xyz.oilpea.wechat.agency.util.AuthUtil;
 
@@ -19,6 +25,15 @@ public class WeChatLoginController {
 	private static final long serialVersionUID = 1L;
 	@Autowired
 	AgencyService agencyService;
+	
+//	@Autowired
+//	HttpServletRequest request;
+	
+	@Autowired
+	HttpServletResponse response;
+	
+	@Autowired
+	HttpSession session;
 
 	@GetMapping("/agencylogin")
 	public String auth() {
@@ -74,13 +89,51 @@ public class WeChatLoginController {
 		System.out.println("登录成功");
 		System.out.println(userInfo);
 		agencyService.AgencyLogin(openid);
-		return "beetl/deliverySystem/ListOfGoodsList_DeliverySystem";
+		session.setAttribute("wechatId", openid);
+		return "/delivery";
 	}
 
-	@GetMapping("/test")
-	public String test() {
-		System.out.println("test");
-		return "beetl/deliverySystem/ListOfGoodsList_DeliverySystem";
-		// new UserServiceImpl().test();
+	@GetMapping("/test1")
+	public String test1() {
+		System.out.println("test1");
+		String agencyWechatId="o97Es1GlC7vFb1ofxKDtrQ_5D8Jc";
+		Cookie c=new Cookie("agencyWechatId", agencyWechatId);
+		c.setPath("/");
+//		if(agencyWechatId!=null) {
+//			c.setMaxAge(60*60*24*7);
+//		}else {
+//			c.setMaxAge(0);
+//		}
+		response.addCookie(c);
+		System.out.println("test1");
+		return "/delivery";
 	}
+	
+	
+	@GetMapping("/test11")
+	public String test11() {
+		System.out.println("test11");
+		String agencyWechatId="o97Es1GlC7vFb1ofxKDtrQ_5D8yy";
+		Cookie c=new Cookie("agencyWechatId", agencyWechatId);
+		c.setPath("/");
+//		if(agencyWechatId!=null) {
+//			c.setMaxAge(60*60*24*7);
+//		}else {
+//			c.setMaxAge(0);
+//		}
+		response.addCookie(c);
+		System.out.println("test11");
+		return "/delivery";
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+

@@ -15,11 +15,18 @@
     <result column="send_id" jdbcType="INTEGER" property="sendId" />
     <result column="send_address" jdbcType="VARCHAR" property="sendAddress" />
     <result column="sned_phone" jdbcType="VARCHAR" property="snedPhone" />
+    <result column="state" jdbcType="INTEGER" property="state" />
     <result column="remarks" jdbcType="LONGVARCHAR" property="remarks" />
   </resultMap>
   
+<!--   <select id="queryOrdersByReceiveIdAndState" parameterType="java.lang.Integer" resultType="xyz.oilpea.wechat.agency.pojo.Agencyorders">
+  	select * FROM agencyOrders 
+  		<where>
+  			receive_id = #{receiveId,jdbcType=INTEGER} and order_state = #{orderState,jdbcType=INTEGER}
+  		</where>
+  </select> -->
   
-  <select id=queryOrdersByReceiveIdAndState parameterType="java.lang.Integer" resultMap="BaseResultMap">
-  	
-  </select>
+<!--   <select id="queryOrdersBySendIdAndState" parameterType="java.lang.Integer" resultType="xyz.oilpea.wechat.agency.pojo.Agencyorders">
+  	select * FROM agencyOrders WHERE send_id = #{sendId} and order_state = #{orderState }
+  </select> -->
 </mapper>

@@ -1,15 +1,14 @@
 <!doctype html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>订单入库管理</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link href="../css/mui.min.css" rel="stylesheet" />
-		<link href="../css/icons-extra.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+		<link href="../static/css/icons-extra.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../static/css/app.css" />
 	</head>
 <style type="text/css">
 	html,
@@ -47,7 +46,7 @@
 	<body>
 		<div class="mui-inner-wrap">
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-icon mui-pull-left" href="Warehousing.html"><span class="mui-icon-back" ></span></a>
+				<a class="mui-icon mui-pull-left" href="/stock"><span class="mui-icon-back" ></span></a>
 				<h1 class="mui-title">订单入库管理</h1>
 				<div class="mui-pull-right" style="width:20px;height: 10px;"></div>
 				<a class="mui-icon mui-pull-right" href="#"><span class="mui-icon-extra mui-icon-extra-sweep"></span></a>
@@ -62,66 +61,101 @@
 					<font class="mui-tab-label">已处理</font>
 				</a>
 			</nav>
-			
 			<div class="mui-content">
 				<div id="untreated" class="mui-control-content mui-active">
-					<div id="sliderSegmentedControl" class="mui-bar mui-bar-tab">
-						<div class="mui-tab-item mui-checkbox mui-left">
-							<input name="checkbox" type="checkbox" style="position: relative;left: 0px;">
-							<span style="position: relative;left: 0px; top: 3px;">全选</span>
+					<form action="/stock/success">
+						<div id="sliderSegmentedControl" class="mui-bar mui-bar-tab">
+							<div class="mui-tab-item mui-checkbox mui-left">
+								<input id="wChAll" type="checkbox" style="position: relative;left: 0px;" onclick="wCheckAll()">
+								<font style="position: relative;left: 0px;font-size: 30px;">全选</font>
+							</div>
+							<div class="mui-tab-item"></div>
+							<div class="mui-tab-item">
+								<input type="submit" value="确认入库" onclick="return wCheck()" style="background-color: #efeff4; color: black; border: 0px;font-size: 30px;">
+							</div>
 						</div>
-						<div class="mui-tab-item"></div>
-						<a id='done' class="mui-tab-item" href=""><font style="position: relative;top: 5px;">确认入库</font></a>
-					</div>
-					<ul	class="mui-table-view" id="orders">
-						<li class="mui-table-view-divider mui-media mui-checkbox mui-left">
-							<table>
-								<tr>
-									<td><input name="checkbox" type="checkbox" style="position: relative;left: 0;"></td>
-									<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
-									<td>
-										<div class="mui-media-body">
-											<span style="font-size: 25px;">agencyStock.itemName</span>
-											<h5>价格：agencyStock.itemPrice</h5>
-											<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
-										</div> 
-									</td>
-									<a href="../orderDetail.html" class="mui-btn mui-btn-link mui-pull-right">详情</a>
-								</tr>
-							</table>
-						</li>
-					</ul>
+						<ul	class="mui-table-view" id="orders">
+						<!--for(untreated in untreateds){-->
+							<li class="mui-table-view-divider mui-media mui-checkbox mui-left">
+								<table>
+									<tr>
+										<td><input name="woids" type="checkbox" value="${untreated.orderId!}" style="position: relative;left: 0;"></td>
+										<td class="img"><img class="mui-media-object mui-pull-left" src="${untreated.itemHeadImg!}"/></td>
+										<td>
+											<div class="mui-media-body">
+												<span style="font-size: 25px;">${untreated.itemName!}</span>
+												<p class="mui-ellipsis" >数量：${untreated.itemCount!}</p> 
+											</div> 
+										</td>
+										<a href="/orders/detail?system=stock&orderId=${untreated.orderId!}" class="mui-btn mui-btn-link mui-pull-right">详情</a>
+									</tr>
+								</table>
+							</li>
+						<!-- } -->
+						</ul>
+					</form>
 				</div>
 				
 				<div id="processed" class="mui-control-content">
 					<ul	class="mui-table-view">
+					<!--for(processed in processeds){-->
 						<li class="mui-table-view-divider">
 							<table>
 								<tr>
-									<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
+									<td class="img"><img class="mui-media-object mui-pull-left" src="${processed.itemHeadImg!}"/></td>
 									<td>
 										<div class="mui-media-body">
-											<span style="font-size: 25px;">agencyStock.itemName</span>
-											<h5>价格：agencyStock.itemPrice</h5>
-											<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+											<span style="font-size: 25px;">${processed.itemName!}</span>
+											<p class="mui-ellipsis" >数量：${processed.itemCount!}</p> 
 										</div> 
 									</td>
-									<a href="../orderDetail.html" class="mui-btn mui-btn-link mui-pull-right">详情</a>
+									<a href="/orders/detail?system=stock&orderId=${processed.orderId!}" class="mui-btn mui-btn-link mui-pull-right">详情</a>
 								</tr>
 							</table>
 						</li>
+					<!-- } -->
 					</ul>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script src="../js/mui.min.js"></script>
-	<script src="../js/mui.indexedlist.js"></script>
-	<script src="../js/mui.grouplist.testdata.js">
+	<script src="../static/js/mui.min.js"></script>
+	<script src="../static/js/mui.indexedlist.js"></script>
+	<script src="../static/js/mui.grouplist.testdata.js"></script>
 	<script type="text/javascript">
 		mui.init();
 		mui('body').on('tap','a',function(){
 			window.top.location.href=this.href;
 		});
+		function wCheckAll(){
+			var flag= document.getElementById("wChAll").checked;
+			
+			var ids = document.getElementsByName("woids");
+			
+			for(var i=0;i<ids.length;i++){
+				ids[i].checked=flag;
+			}
+		}
+		function wCheck(){
+			var ids = document.getElementsByName("woids");
+			
+			var count=0;
+			
+			for(var i=0;i<ids.length;i++){
+				if(ids[i].checked){
+					count++;
+				}
+			}
+			if(count==0){
+				alert("至少选一项");
+				return false;
+			}else{
+				if(confirm('are you sure to confirm it?')==true){
+					return true;
+				}
+				return false;
+			}
+			
+		}
 	</script>
 </html>

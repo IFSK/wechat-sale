@@ -10,5 +10,4 @@
     <result column="item_count" jdbcType="INTEGER" property="itemCount" />
   </resultMap>
   
-  <select id=""></select>
 </mapper>

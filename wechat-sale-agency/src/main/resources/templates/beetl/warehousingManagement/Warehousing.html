@@ -1,58 +1,57 @@
 <!doctype html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>库存</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../css/mui.min.css" rel="stylesheet" />
-		<link href="../css/mui.indexedlist.css" rel="stylesheet" />
-		<style>
-			html,
-			body {
-				height: 100%;
-				overflow: hidden;
-			}
-			.mui-bar {
-				-webkit-box-shadow: none;
-				box-shadow: none;
-			}
-			#done.mui-disabled{
-				color: gray;
-			}
-			h4{
-		float: left;
-	}
-	p{
-		color: brown;
-	}
-		</style>
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+		<link href="../static/css/mui.indexedlist.css" rel="stylesheet" />
 	</head>
+	<style>
+		html,
+		body {
+			height: 100%;
+			overflow: hidden;
+		}
+		.mui-bar {
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+		#done.mui-disabled{
+			color: gray;
+		}
+		h4{
+			float: left;
+		}
+		p{
+			color: brown;
+		}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-icon mui-pull-right" href="Receipt_Order.html"><h5>管理</h5></a>
+				<a class="mui-icon mui-pull-right" href="/stock/orders"><h5>管理</h5></a>
 				<h1 class="mui-title">库存</h1>
 			</header>
 		</header>
 		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item" href="../DeliverySystem/ListOfGoodsList_DeliverySystem.html">
+			<a class="mui-tab-item  mui-active" href="/delivery">
 				<span class="mui-icon mui-icon-undo"></span>
 				<span class="mui-tab-label">发货</span>
 			</a>
-			<a class="mui-tab-item" href="../OrderSystem/Subordinate.html">
+			<a class="mui-tab-item" href="/orders">
 				<span class="mui-icon mui-icon-list"></span>
 				<span class="mui-tab-label">订单</span>
 			</a>
-			<a class="mui-tab-item mui-active" href="Warehousing.html">
+			<a class="mui-tab-item mui-active" href="/stock">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">库存</span>
 			</a>
-			<a class="mui-tab-item" href="../LowerLevelManagement/LowerLevelManagement.html">
+			<a class="mui-tab-item" href="/lowerlevel">
 				<span class="mui-icon mui-icon-download"></span>
 				<span class="mui-tab-label">下级</span>
 			</a>
-			<a class="mui-tab-item" href="../PersonalCenter/PersonalInformation.html">
+			<a class="mui-tab-item" href="/person">
 				<span class="mui-icon mui-icon-person"></span>
 				<span class="mui-tab-label">个人</span>
 			</a>
@@ -67,17 +66,18 @@
 				<div class="mui-indexed-list-inner">
 					<div class="mui-indexed-list-empty-alert">没有数据</div>
 					<ul class="mui-table-view" style="margin-bottom: 50px;">
+					<!--for(stock in stocks){-->
 						<li class="mui-table-view-cell mui-media mui-collapse">
 							<a class="mui-navigate-right" href="#">
 								<table>
 									<tr>
 										<td>
-											<img class="mui-media-object mui-pull-left" src="images/qq.png" />
+											<img class="mui-media-object mui-pull-left" src="${stock.itemHeadImg!}" />
 										</td>
 										<td>
 											<div class="mui-media-body">
-												<span style="font-size: 25px;">agencyStock.itemName</span>
-												<p class="mui-ellipsis">agencyStock.itemPrice</p>
+												<span style="font-size: 25px;">${stock.itemName!}</span>
+												<p class="mui-ellipsis">￥${stock.itemPrice!}</p>
 											</div>
 										</td>
 									</tr>
@@ -85,22 +85,23 @@
 							</a>
 							<ul class="mui-table-view mui-table-view-chevron">
 								<li class="mui-table-view-cell">
-									<h4>库存ID</h4>
-									<span class="mui-pull-right">agencyStock.itemId</span>
+									<h4>商品ID</h4>
+									<span class="mui-pull-right">${stock.itemId!}</span>
 								</li>
 								<li class="mui-table-view-cell">
 									<h4>库存数量</h4>
-									<span class="mui-pull-right">agencyStock.itemStock</span>
+									<span class="mui-pull-right">${stock.itemStock!}</span>
 								</li>
 							</ul>
 						</li>
+					<!-- } -->	
 					</ul>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script src="../js/mui.min.js"></script>
-	<script src="../js/mui.indexedlist.js"></script>
+	<script src="../static/js/mui.min.js"></script>
+	<script src="../static/js/mui.indexedlist.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		mui.init();
 		mui('body').on('tap','a',function(){
@@ -113,6 +114,4 @@
 			window.indexedList = new mui.IndexedList(list);
 		});
 	</script>
-	
-
 </html>

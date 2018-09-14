@@ -62,7 +62,7 @@
 				<a class="mui-icon mui-pull-right" href="/orders/myList"><h5 style="color: gray;">我的订单</h5></a>
 			</header>
 			<nav class="mui-bar mui-bar-tab">
-				<a class="mui-tab-item" href="/delivery">
+				<a class="mui-tab-item  mui-active" href="/delivery">
 					<span class="mui-icon mui-icon-undo"></span>
 					<span class="mui-tab-label">发货</span>
 				</a>
@@ -89,54 +89,58 @@
 					<a class="mui-tab-item" href="#processed">已处理</a>
 				</div>
 				<div id="untreated" class="mui-control-content mui-active">
-					<form action="">
+					<form action="/orders/fillInfo">
 						<div id="confirm" class="mui-bar mui-bar-tab">
 							<div class="mui-tab-item mui-checkbox mui-left">
-								<input name="checkbox" type="checkbox" style="position: relative;left: 0px;">
-								<font style="position: relative;left: 0px; top: 3px;">全选</font>
+								<input id="chAll" type="checkbox" style="position: relative;left: 0px;" onclick="checkAll()">
+								<font style="position: relative;left: 0px;font-size: 30px;">全选</font>
 							</div>
 							<div class="mui-tab-item"></div>
-							<a id='submit' class="mui-tab-item" href=""><font style="position: relative;top: 5px;">确认订单</font></a>
+							<div class="mui-tab-item">
+								<input type="submit" value="确认订单" onclick="return check()" style="background-color: #efeff4; color: black; border: 0px;font-size: 30px;">
+							</div>
 						</div>
 						<ul	class="mui-table-view" id="orders" style="margin-bottom: 50px;">
+						<!-- for(untreated in untreatedList){ -->
 							<li class="mui-table-view-divider mui-media mui-checkbox mui-left" >
 								<table>
 									<tr>
-										<td><input name="checkbox" type="checkbox" style="position: relative;left: 0;"></td>
-										<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
+										<td><input name="oids" type="checkbox" value="${myUnshippedOrder.orderId!}" style="position: relative;left: 0;"></td>
+										<td class="img"><img class="mui-media-object mui-pull-left" src="${untreated.itemHeadImg!}"/></td>
 										<td>
 											<div class="mui-media-body">
-												<font style="font-size: 25px;">agencyStock.itemName</font>
-												<h5>价格：agencyStock.itemPrice</h5>
-												<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+												<font style="font-size: 25px;">${untreated.itemName!}</font>
+												<p class="mui-ellipsis" >数量：${untreated.itemCount!}</p> 
 											</div> 
 										</td>
-										<a href="/orders/detail" class="mui-btn mui-btn-link mui-pull-right">详情</a>
+										<a href="/orders/detail?system=lowerLevel&orderId=${untreated.orderId!}" class="mui-btn mui-btn-link mui-pull-right">详情</a>
 									</tr>
 								</table>
 							</li>
+						<!-- } -->
 						</ul>
 					</form>
 				</div>
 				
 				<div id="processed" class="mui-control-content">
 					<ul class="mui-table-view" id="orders">
+					<!-- for(processed in processedList){ -->
 						<li class="mui-table-view-cell mui-media">
-							<a class="mui-navigate-right" href="/orders/detail">
+							<a class="mui-navigate-right" href="/orders/detail?system=lowerLevel&orderId=${processed.orderId!}">
 								<table>
 									<tr>
-										<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
+										<td class="img"><img class="mui-media-object mui-pull-left" src="${processed.itemHeadImg!}"/></td>
 										<td>
 											<div class="mui-media-body">
-												<font style="font-size: 25px;">agencyStock.itemName</font>
-												<h5>价格：agencyStock.itemPrice</h5>
-												<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+												<font style="font-size: 25px;">${processed.itemName!}</font>
+												<p class="mui-ellipsis" >数量：${processed.itemCount!}</p> 
 											</div>
 										</td>
 									</tr>
 								</table>
 							</a>
 						</li>
+					<!-- } -->
 					</ul>
 				</div>
 			</div>
@@ -146,9 +150,39 @@
 	<script src="../static/js/mui.indexedlist.js"></script>
 	<script src="../static/js/mui.grouplist.testdata.js"></script>
 	<script type="text/javascript">
-		mui.init();
-		mui('body').on('tap','a',function(){
-			window.top.location.href=this.href;
-		});
+	mui.init();
+	mui('body').on('tap','a',function(){
+		window.top.location.href=this.href;
+	});
+	function checkAll(){
+		var flag= document.getElementById("chAll").checked;
+		
+		var ids = document.getElementsByName("oids");
+		
+		for(var i=0;i<ids.length;i++){
+			ids[i].checked=flag;
+		}
+	}
+	function check(){
+		var ids = document.getElementsByName("oids");
+		
+		var count=0;
+		
+		for(var i=0;i<ids.length;i++){
+			if(ids[i].checked){
+				count++;
+			}
+		}
+		if(count==0){
+			alert("至少选一项");
+			return false;
+		}else{
+			if(confirm('are you sure to confirm it?')==true){
+				return true;
+			}
+			return false;
+		}
+		
+	}
 	</script>
 </html>

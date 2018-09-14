@@ -23,46 +23,40 @@
 			<div class="mui-content mui-scroll-wrapper">
 				<div class="mui-scroll">
 					<div class="mui-slider">
-						<form class="mui-input-group">
-							<ul	class="mui-table-view">
-								<li class="mui-table-view-cell">
-									<h4>订单编号</h4>
-									<span class="mui-pull-right">Agency.agencyId</span>
-								</li>
-							</ul>
+						<form class="mui-input-group" action="/orders/success">
 							<div class="mui-input-row"></div>
 							<div class="mui-input-row">
-								<label>产品</label>
-								<select style="float: right; width: 65%;">
+								<label>商品</label>
+								<select name="itemId" style="float: right; width: 65%;">
 									<option value="item-1">请选择产品</option>
-									<option value="item-2">产品1</option>
-									<option value="item-3">产品2</option>
-									<option value="item-4">产品3</option>
-									<option value="item-5">产品4</option>
+									<!--for(itemstype in itemstypes!){-->
+									<option value="${itemstype.itemId!}">${itemstype.itemName!}</option>
+									
+									<!-- } -->
 								</select>
 							</div>
 							<div class="mui-input-row">
 								<label>数量</label>
-								<input type="text" class="mui-input-clear" placeholder="请输入银行卡号Agency.bankAccount">
+								<input name="itemCount" type="text" class="mui-input-clear" placeholder="请输入商品数量">
 							</div>
-							<div class="mui-input-row"><h5 style="position: relative;top: 18px;">收货人信息：</h5></div>
+							<div class="mui-input-row"><h5 style="position: relative;top: 18px;">&nbsp;收货人信息：</h5></div>
 							
 							<div class="mui-input-row">
-								<label>用户名</label>
-								<input type="text" class="mui-input-clear" placeholder="请输入银行卡号Agency.bankAccount">
+								<label>ID</label>
+								<input name="receiveId" type="text" class="mui-input-clear" placeholder="请输入ID">
 							</div>
 							<div class="mui-input-row">
 								<label>联系电话</label>
-								<input type="text" class="mui-input-clear" placeholder="请输入银行卡号Agency.bankAccount">
+								<input name="receivePhone" type="text" class="mui-input-clear" placeholder="请输入联系电话">
 							</div>
 							<div class="mui-input-row">
 								<label>收货地址</label>
-								<input type="text" class="mui-input-clear" placeholder="请输入银行卡号Agency.bankAccount">
+								<input name="receiveAddress" type="text" class="mui-input-clear" placeholder="请输入收货地址">
 							</div>
 							<ul class="mui-table-view">
 								<li class="mui-table-view-cell">
 									<div class="mui-content-padded">
-										<button type="button" class="mui-btn mui-btn-success mui-btn-block">下订单</button>
+										<button type="submit" class="mui-btn mui-btn-success mui-btn-block">下订单</button>
 									</div>
 								</li>
 							</ul>
@@ -80,5 +74,4 @@
     		window.top.location.href=this.href;});
 		</script>
 	</body>
-
 </html>

@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>货单列表</title>
@@ -76,92 +75,82 @@
 			</nav>
 			<div class="mui-content">
 				<div id="sliderSegmentedControl" class="mui-bar mui-bar-tab">
-					<a class="mui-tab-item mui-active" href="#unshippedDelivery">未发货</a>
-					<a class="mui-tab-item" href="#uncollectedGoods">未收货</a>
+					<a class="mui-tab-item mui-active" href="#unshippedDelivery">出货单</a>
+					<a class="mui-tab-item" href="#uncollectedGoods">待收货</a>
 					<a class="mui-tab-item" href="#haveReceivedTheGoods">已收货</a>
 				</div>
 				<div id="unshippedDelivery" class="mui-control-content mui-active">
 					<ul	class="mui-table-view" id="orders">
+					<!--for(unshipped in Unshipped!){-->
 						<li class="mui-table-view-divider mui-media mui-checkbox mui-left mui-row">
 							<table class="mui-col-xs-10">
 								<tr>
-									<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
+									<td class="img"><img class="mui-media-object mui-pull-left" src="${unshipped.itemHeadImg!}"/></td>
 									<td>
 										<div class="mui-media-body">
-											<font style="font-size: 25px;">agencyStock.itemName</font>
-											<h5>价格：agencyStock.itemPrice</h5>
-											<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+											<font style="font-size: 25px;">${unshipped.itemName!}</font>
+											<p class="mui-ellipsis" >数量：${unshipped.itemCount!}</p> 
 										</div> 
 									</td>
 								</tr>
 							</table>
 							<div class="mui-pull-right">
-								<a href="/orders/detail" class="mui-btn mui-btn-link">详情</a><br />
+								<form action="/orders/detail">
+									<input name="system" value="delivery" hidden="hidden"/>
+									<input name="orderId" value="${unshipped.orderId}" hidden="hidden">
+									<input class="inputs" type="submit"  value="详情" style="background-color: white; color: black; border: 0px;"/><br />
+								</form>
 								<a href="#" class="mui-btn mui-btn-link">扫码</a><br />
-								<a href="/delivery/fillCode" class="mui-btn mui-btn-link">填码</a>
+								<form action="/delivery/fillCode">
+									<input class="inputs" type="submit"  value="填码" style="background-color: white; color: black; border: 0px;"/><br />
+								</form>
 							</div>
 						</li>
-						<li class="mui-table-view-divider mui-media mui-checkbox mui-left mui-row" >
-							<table class="mui-col-xs-10">
-								<tr>
-									<td class="img"><img class="mui-media-object mui-pull-left" src="images/user-photo.png"/></td>
-									<td>
-										<div class="mui-media-body">
-											<font style="font-size: 25px;">agencyStock.itemName</font>
-											<h5>价格：agencyStock.itemPrice</h5>
-											<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
-										</div> 
-									</td>
-								</tr>
-							</table>
-							<div class="mui-pull-right">
-								<a href="/orders/detail" class="mui-btn mui-btn-link">详情</a><br />
-								<a href="#" class="mui-btn mui-btn-link">扫码</a><br />
-								<a href="/delivery/fillCode" class="mui-btn mui-btn-link">填码</a>
-							</div>
-						</li>
+					<!-- } -->
 					</ul>
 				</div>
 				
 				<div id="uncollectedGoods" class="mui-control-content">
 					<ul class="mui-table-view" id="orders">
+					<!--for(uncollected in Uncollected){-->
 						<li class="mui-table-view-cell mui-media">
-							<a class="mui-navigate-right" href="/orders/detail">
+							<a class="mui-navigate-right" href="/orders/detail?system=delivery&orderId=${uncollected.orderId!}">
 								<table>
 									<tr>
-										<td class="img"><img class="mui-media-object mui-pull-left" src="images/qq.png"/></td>
+										<td class="img"><img class="mui-media-object mui-pull-left" src="${uncollected.itemHeadImg!}"/></td>
 										<td>
 											<div class="mui-media-body">
-												<font style="font-size: 25px;">agencyStock.itemName</font>
-												<h5>价格：agencyStock.itemPrice</h5>
-												<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+												<font style="font-size: 25px;">${uncollected.itemName!}</font>
+											<p class="mui-ellipsis" >数量：${uncollected.itemCount!}</p> 
 											</div>
 										</td>
 									</tr>
 								</table>
 							</a>
 						</li>
+					<!-- } -->
 					</ul>
 				</div>
 				
 				<div id="haveReceivedTheGoods" class="mui-control-content">
 					<ul class="mui-table-view" id="orders">
+					<!--for(received in Received){-->
 						<li class="mui-table-view-cell mui-media">
-							<a class="mui-navigate-right" href="/orders/detail">
+							<a class="mui-navigate-right" href="/orders/detail?system=delivery&orderId=${received.orderId!}">
 								<table>
 									<tr>
-										<td class="img"><img class="mui-media-object mui-pull-left" src="images/weixin.png"/></td>
+										<td class="img"><img class="mui-media-object mui-pull-left" src="${received.itemHeadImg!}"/></td>
 										<td>
 											<div class="mui-media-body">
-												<font style="font-size: 25px;">agencyStock.itemName</font>
-												<h5>价格：agencyStock.itemPrice</h5>
-												<p class="mui-ellipsis" >数量：agencyStock.itemStock</p> 
+												<font style="font-size: 25px;">${received.itemName!}</font>
+												<p class="mui-ellipsis" >数量：${received.itemCount!}</p> 
 											</div>
 										</td>
 									</tr>
 								</table>
 							</a>
 						</li>
+					<!-- } -->
 					</ul>
 				</div>
 			</div>

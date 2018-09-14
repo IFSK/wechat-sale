@@ -3,9 +3,9 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>更多信息</title>
+		<title>填写信息</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
 
 	</head>
 <style type="text/css">
@@ -16,31 +16,32 @@
 	<body>
 		<div class="mui-inner-wrap">
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-icon mui-pull-left" href="Personal_Information.html"><span class="mui-icon-back" style="color: black;"></span></a>
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav" style="color: black;"></span>
+				</button>
 				<h1 class="mui-title">填写信息</h1>
-				
 			</header>
 			<div class="mui-content mui-scroll-wrapper">
 				<div class="mui-scroll">
 					<div class="mui-slider">
-						<div class="mui-input-row"><h5>收货人信息：</h5></div>
-						<form class="mui-input-group">	
+						<div class="mui-input-row"><h5>&nbsp;出货人信息：</h5></div>
+						<form class="mui-input-group" action="/orders/confirm">	
 							<div class="mui-input-row">
-								<label class="home">用户名</label>
-								<input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+								<label class="home">ID</label>
+								<input name="sendId" type="text" class="mui-input-clear" placeholder="请输入ID">
 							</div>
 							<div class="mui-input-row">
 								<label class="home">联系电话</label>
-								<input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+								<input name="snedPhone" type="text" class="mui-input-clear" placeholder="请输入联系电话">
 							</div>
 							<div class="mui-input-row">
-								<label class="home">收货地址</label>
-								<input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+								<label class="home">出货地址</label>
+								<input name="sendAddress" type="text" class="mui-input-clear" placeholder="请输入出货地址">
 							</div>
 							<ul class="mui-table-view">
 								<li class="mui-table-view-cell">
 									<div class="mui-content-padded">
-										<button type="button" class="mui-btn mui-btn-success mui-btn-block">生成出货单</button>
+										<button type="submit" class="mui-btn mui-btn-success mui-btn-block">生成出货单</button>
 									</div>
 								</li>
 							</ul>
@@ -49,7 +50,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="../js/mui.min.js"></script>
+		<script src="../static/js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
 			mui('body').on('tap','a',function(){

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="xyz.oilpea.wechat.sale.core.mapper.ItemMapper">
-  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.sale.core.pojo.Item">
+<mapper namespace="xyz.oilpea.wechat.app.api.mapper.ItemMapper">
+  <resultMap id="BaseResultMap" type="xyz.oilpea.wechat.app.api.pojo.Item">
     <!--
       WARNING - @mbg.generated
     -->
-    <result column="item_id" jdbcType="INTEGER" property="itemId" />
+    <id column="item_id" jdbcType="INTEGER" property="itemId" />
+    <result column="itemType_id" jdbcType="INTEGER" property="itemtypeId" />
     <result column="large_code" jdbcType="VARCHAR" property="largeCode" />
     <result column="small_code" jdbcType="VARCHAR" property="smallCode" />
     <result column="security_code" jdbcType="VARCHAR" property="securityCode" />
+    <result column="is_used" jdbcType="CHAR" property="isUsed" />
+    <result column="place" jdbcType="VARCHAR" property="place" />
   </resultMap>
 </mapper>

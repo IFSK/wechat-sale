@@ -28,16 +28,24 @@
 			<h1 class="mui-title">窜货查询</h1>
 		</header>
 		<div class="mui-content">
-			<div id='list' class="mui-indexed-list">
-				<div class="mui-indexed-list-search mui-input-row mui-search">
-					<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索">
+			<div class="mui-content">
+			<form class="mui-input-group" action="/orders/detail">	
+				<div class="mui-input-row">
+					<input name="system" value="inquiry" hidden="hidden"/>
 				</div>
-				<div class="mui-indexed-list-bar" style="width: 0px"></div>
-				<div class="mui-indexed-list-alert"></div>
-				<div class="mui-indexed-list-inner">
-					<div class="mui-indexed-list-empty-alert">没有数据</div>
+				<div class="mui-input-row">
+					<label class="home">订单号</label>
+					<input name="orderId" type="text" class="mui-input-clear" placeholder="请输入需要查询的订单号">
 				</div>
-			</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="mui-content-padded">
+							<button type="submit" class="mui-btn mui-btn-success mui-btn-block">查询</button>
+						</div>
+					</li>
+				</ul>
+			</form>
+		</div>
 		</div>
 	</body>
 	<script src="../static/js/mui.min.js"></script>

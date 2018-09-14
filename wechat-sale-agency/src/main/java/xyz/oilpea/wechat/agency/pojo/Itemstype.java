@@ -12,6 +12,9 @@ public class Itemstype implements Serializable {
     @Column(name = "item_brand")
     private String itemBrand;
 
+    @Column(name = "item_price")
+    private Integer itemPrice;
+
     @Column(name = "item_name")
     private String itemName;
 
@@ -20,9 +23,6 @@ public class Itemstype implements Serializable {
 
     @Column(name = "item_head_img")
     private String itemHeadImg;
-
-    @Column(name = "item_description")
-    private String itemDescription;
 
     private static final long serialVersionUID = 1L;
 
@@ -52,6 +52,20 @@ public class Itemstype implements Serializable {
      */
     public void setItemBrand(String itemBrand) {
         this.itemBrand = itemBrand == null ? null : itemBrand.trim();
+    }
+
+    /**
+     * @return item_price
+     */
+    public Integer getItemPrice() {
+        return itemPrice;
+    }
+
+    /**
+     * @param itemPrice
+     */
+    public void setItemPrice(Integer itemPrice) {
+        this.itemPrice = itemPrice;
     }
 
     /**
@@ -94,19 +108,5 @@ public class Itemstype implements Serializable {
      */
     public void setItemHeadImg(String itemHeadImg) {
         this.itemHeadImg = itemHeadImg == null ? null : itemHeadImg.trim();
-    }
-
-    /**
-     * @return item_description
-     */
-    public String getItemDescription() {
-        return itemDescription;
-    }
-
-    /**
-     * @param itemDescription
-     */
-    public void setItemDescription(String itemDescription) {
-        this.itemDescription = itemDescription == null ? null : itemDescription.trim();
     }
 }

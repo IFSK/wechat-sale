@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>更多信息</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
 
 	</head>
 <style type="text/css">
@@ -16,7 +16,7 @@
 	<body>
 		<div class="mui-inner-wrap">
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-icon mui-pull-left" href="Personal_Information.html"><span class="mui-icon-back" style="color: black;"></span></a>
+				<a class="mui-icon mui-pull-left" href="/person"><span class="mui-icon-back" style="color: black;"></span></a>
 				<h1 class="mui-title">更多信息</h1>
 				
 			</header>
@@ -26,37 +26,37 @@
 						<ul	class="mui-table-view">
 							<li class="mui-table-view-cell">
 								<h4>ID</h4>
-								<span class="mui-pull-right">Agency.agencyId</span>
+								<span class="mui-pull-right">${agency.agencyId}</span>
 							</li>
 						</ul><br />
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell">
 								<h4>真实姓名</h4>
-								<span class="mui-pull-right">Agency.realname</span>
+								<span class="mui-pull-right">${agency.realname}</span>
 							</li>
 							<li class="mui-table-view-cell">
 								<h4>身份证</h4>
-								<span class="mui-pull-right">Agency.idCard</span>
+								<span class="mui-pull-right">${agency.idCard}</span>
 							</li>
 						</ul><br />
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell">
 								<h4>级别</h4>
-								<span class="mui-pull-right">Agency.level</span>
+								<span class="mui-pull-right">${agency.level}</span>
 							</li>
 							<li class="mui-table-view-cell">
-								<h4>级别ID</h4>
-								<span class="mui-pull-right">Agency.superiorId</span>
+								<h4>上级ID</h4>
+								<span class="mui-pull-right">${agency.superiorId}</span>
 							</li>
 							<li class="mui-table-view-cell">
 								<h4>授权码</h4>
-								<span class="mui-pull-right">Agency.invitationCode</span>
+								<span class="mui-pull-right">${agency.invitationCode}</span>
 							</li>
 						</ul><br />
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell">
 								<h4>创建时间</h4>
-								<span class="mui-pull-right">Agency.createtime</span>
+								<span class="mui-pull-right">${agency.createtime}</span>
 							</li>
 							<li class="mui-table-view-cell">
 								<a href="bank_card.html">
@@ -68,14 +68,14 @@
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell">
 								<h4>状态</h4>
-								<span class="mui-pull-right">Agency.status</span>
+								<span class="mui-pull-right">${agency.status}</span>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-		<script src="../js/mui.min.js"></script>
+		<script src="../static/js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
 			mui('body').on('tap','a',function(){

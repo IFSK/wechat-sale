@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>个人中心</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
 	</head>
 <style type="text/css">
 	h4{
@@ -15,12 +15,10 @@
 	<body>
 		<div class="mui-inner-wrap">
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-icon mui-pull-left" href=""><h5>编辑</h5></a>
 				<h1 class="mui-title">个人中心</h1>
-				<a class="mui-icon mui-pull-right" href="setting.html"><span class="mui-icon-settings" style="color: black;"></span></a>
 			</header>
 			<nav class="mui-bar mui-bar-tab">
-				<a class="mui-tab-item" href="/delivery">
+				<a class="mui-tab-item  mui-active" href="/delivery">
 					<span class="mui-icon mui-icon-undo"></span>
 					<span class="mui-tab-label">发货</span>
 				</a>
@@ -46,33 +44,35 @@
 					<div class="mui-slider">
 						<ul	class="mui-table-view">
 							<li class="mui-table-view-cell" style="height: 220px;">
-								<img src="images/user-photo.png" style="display:block;width: 200px;height: 200px; margin:auto;" name="icon"/>
-								
+								<img src="${agency.headImg}" style="display:block;width: 200px;height: 200px; margin:auto;" name="icon"/>
 							</li>
 							<li class="mui-table-view-cell">
-								<h4>微信号</h4>
-								<span class="mui-pull-right">Agency.wechatId</span>
+								<a href="/person/editInfo?value=${agency.username!}&title=username">
+									<h4>用户名</h4>
+									<span class="mui-pull-right">${agency.username!}</span>
+								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<h4>用户名</h4>
-								<span class="mui-pull-right">Agency.username</span>
+								<a href="/person/editInfo?value=${agency.phone!}&title=phone">
+									<h4>手机号</h4>
+									<span class="mui-pull-right">${agency.phone!}</span>
 							</li>
 							<li class="mui-table-view-cell">
-								<h4>手机号</h4>
-								<span class="mui-pull-right">Agency.phone</span>
+								<a href="/person/editInfo?value=${agency.email!}&title=email">
+									<h4>Email</h4>
+									<span class="mui-pull-right">${agency.email!}</span>
+								</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<h4>Email</h4>
-								<span class="mui-pull-right">Agency.email</span>
-							</li>
-							<li class="mui-table-view-cell">
-								<h4>地址</h4>
-								<span class="mui-pull-right">Agency.address</span>
+								<a href="/person/editInfo?value=${agency.address!}&title=address">
+									<h4>地址</h4>
+									<span class="mui-pull-right">${agency.address!}</span>
+								</a>
 							</li>
 						</ul><br /><br />
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell">
-								<a href="Personal_Information(more).html">
+								<a href="/person/moreInfo">
 									<h4>更多</h4>
 									<span class="mui-pull-right mui-icon mui-icon-arrowright"></span>
 								</a>
@@ -84,7 +84,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="../js/mui.min.js"></script>
+		<script src="../static/js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
 			mui('body').on('tap','a',function(){

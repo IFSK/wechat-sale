@@ -1,53 +1,108 @@
 package xyz.oilpea.wechat.agency.web.controller;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.beetl.core.GroupTemplate;
+import org.beetl.core.Template;
+import org.beetl.ext.servlet.ServletGroupTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import xyz.oilpea.wechat.agency.pojo.Agencystock;
-import xyz.oilpea.wechat.agency.pojo.Itemstype;
+import xyz.oilpea.wechat.agency.pojo.Agency;
+import xyz.oilpea.wechat.agency.pojo.AgencyList;
 import xyz.oilpea.wechat.agency.service.AgencyService;
-import xyz.oilpea.wechat.agency.service.impl.IAgencyService;
+import xyz.oilpea.wechat.agency.service.OrderSystemService;
 
-@RestController
+@Controller
 @RequestMapping("/test")
 public class TestController {
+	
+//	@Autowired
+//	GroupTemplate template;
+	
+//	@Autowired
+//	Template template;
+	
+	
+	@Autowired
+	HttpServletRequest request;
+	
+	@Autowired
+	HttpServletResponse response;
+	
 	@Autowired
 	AgencyService as;
 	
-	@GetMapping("/1")
-	public String test1() {
-		return "beetl/orderDetail.html";
-//		return "beetl/deliverySystem/ListOfGoodsList_DeliverySystem.html";
-//		return "beetl/deliverySystem/fillInCode.html";
-//		return "beetl/index.html";
-	}
-	
-	@GetMapping("/2")
-	public String test2() {
-		return "beetl/deliverySystem/ListOfGoodsList_DeliverySystem.html";
-	}
-	
-	@GetMapping("/3")
-	public String test3() {
-		return "beetl/deliverySystem/fillInCode.html";
-	}
+	@Autowired
+	OrderSystemService oss;
 	
 	@GetMapping()
-	public List<Agencystock> name() {
-		Integer id=1;
-		System.out.println("test");
-		return as.test(id);
+	public String test() {
+		return "beetl/orderSystem/orderDetail";
 	}
 	
 	@GetMapping("/testtwo")
-	public List<Itemstype> testtwo() {
-		Integer id=1;
-		System.out.println("test");
-		return as.testtwo();
+	public String testtwo() {
+		oss.test();
+//		oss.test2();
+		return "beetl/test";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	@GetMapping("/1")
+//	public Agency test1() {//用wechatID查詢Agency
+//		return as.queryAgencyByWechatId("o97Es1GlC7vFb1ofxKDtrQ_5D8Jc");
+//	}
+//	
+//	@GetMapping("/2")
+//	public Agency test2() {//用AgencyID查询Agency
+//		return as.queryAgencyById(1);
+//	}
+//	
+//	@GetMapping("/3")
+//	public List<Agency> test3() {// 通过邀请码查看下级	
+////	public List<Agencystock> test3() {
+//		System.out.println("通过邀请码查看下级");
+//		return as.queryAencyByInvitationCode("123.1");
+//	}
+//	
+//	@GetMapping("/4")
+//	public List<Agencystock> test4() {// 通过AgencyID查询库存	
+//		System.out.println("通过AgencyID查询库存	");
+//		return as.queryStockByAgencyId(2);
+//	}
+//	
+//	@GetMapping("/5")
+//	public List<Agencyorders> test5() {// 通过邀请码和订单状态查询未处理的下级订单
+//		System.out.println("通过邀请码和订单状态查询未处理的下级订单");
+//		return as.queryOrdersByLowerLevelIdAndState("123.1", 1);
+//	}
+//	
+//	@GetMapping("/6")
+//	public List<Agencyorderdetail> test6() {
+//		System.out.println("test6");
+//		return as.queryOrdersBySendIdAndState(1,1);
+//	}
+	
+	
+	
+
 }
