@@ -25,13 +25,13 @@ public class WeChatLoginController {
 	private static final long serialVersionUID = 1L;
 	@Autowired
 	AgencyService agencyService;
-	
+
 //	@Autowired
 //	HttpServletRequest request;
-	
+
 	@Autowired
 	HttpServletResponse response;
-	
+
 	@Autowired
 	HttpSession session;
 
@@ -43,7 +43,7 @@ public class WeChatLoginController {
 		// 回调地址
 		// String backUrl = "http://suliu.free.ngrok.cc/WxAuth/callBack"; //第1种情况使用
 		System.out.println("l1");
-		String backUrl = "http://www.oilpea.xyz/wechat/userinfo";// 第2种情况使用，这里是web.xml中的路径
+		String backUrl = "http://www.oilpea.xyz/wechat/agencyinfo";// 第2种情况使用，这里是web.xml中的路径
 
 		// 授权页面地址
 		String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + AuthUtil.APPID + "&redirect_uri="
@@ -56,7 +56,7 @@ public class WeChatLoginController {
 		return "redirect:" + url;
 	}
 
-	@GetMapping("/userinfo")
+	@GetMapping("/agencyinfo")
 	public String userInfo(String code) throws ClientProtocolException, IOException {
 
 		// 第二步：通过code换取网页授权access_token
@@ -97,6 +97,7 @@ public class WeChatLoginController {
 			c.setMaxAge(0);
 		}
 		response.addCookie(c);
+		System.out.println("++++++++++++++++++++++++++++++++++++++真的没用？");
 		return "/delivery";
 	}
 
@@ -115,8 +116,8 @@ public class WeChatLoginController {
 		System.out.println("test1");
 		return "/delivery";
 	}
-	
-	
+
+
 	@GetMapping("/test11")
 	public String test11() {
 		System.out.println("test11");
@@ -132,7 +133,7 @@ public class WeChatLoginController {
 		System.out.println("test11");
 		return "/delivery";
 	}
-	
+
 }
 
 
