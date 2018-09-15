@@ -89,7 +89,14 @@ public class WeChatLoginController {
 		System.out.println("登录成功");
 		System.out.println(userInfo);
 		agencyService.AgencyLogin(openid);
-		session.setAttribute("wechatId", openid);
+		Cookie c=new Cookie("agencyWechatId", openid);
+		c.setPath("/");
+		if(openid!=null) {
+			c.setMaxAge(60*60*24*7);
+		}else {
+			c.setMaxAge(0);
+		}
+		response.addCookie(c);
 		return "/delivery";
 	}
 
